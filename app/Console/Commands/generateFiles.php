@@ -7,6 +7,7 @@
 
 /*
  * $ php artisan make:generate-files "Language" "Home"
+ * $ php artisan make:generate-files "Language" ""
  * $ php artisan make:generate-files "Language" "Home" --fac-seed
  * $ php artisan make:generate-files "Language" "Home" --policy
  * $ php artisan make:generate-files "Language" "Home" --fac-seed --policy

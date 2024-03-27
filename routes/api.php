@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Home\TestController;
+use App\Http\Controllers\UserAuth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,14 +21,23 @@ $routes = [
 
 ];
 
-foreach ($routes as $route) {
-    Route::group(array('prefix' => $route['group']), function () use ($route) {
-        Route::resourceAndList($route['model'], $route['ctrl']);
-    });
-}
+/** --------- Register and Login ----------- */
+Route::controller(UserAuth::class)->group(function () {
+    Route::post('register', 'register');
+    Route::post('login', 'login');
+});
+
 /** ----------- Authenticated Routes ------------ */
 Route::middleware('auth:sanctum')->group(function () use ($routes) {
-//    Route::resource('tests', \App\Http\Controllers\Home\TestController::class);
 
+    foreach ($routes as $route) {
+        Route::group(array('prefix' => $route['group']), function () use ($route) {
+            Route::resourceAndList($route['model'], $route['ctrl']);
+        });
+    }
 
+    // Users
+    Route::post('/logout', [UserAuth::class, 'logout']);
 });
+
+/** ----------- Public Routes ------------ */

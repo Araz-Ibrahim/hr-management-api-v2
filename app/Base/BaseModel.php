@@ -2,7 +2,7 @@
 
 namespace App\Base;
 
-use App\Traits\SortableTrait;
+use App\Traits\ApiResponseTrait;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
