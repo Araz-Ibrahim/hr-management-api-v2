@@ -54,8 +54,7 @@ class BaseController extends Controller implements BaseViewInterface
         $perPage = $request->input('perPage', 10);
 
         // Fetch paginated fonts data
-        $data = $this->modelClass::search($request->input('search.value', ''))
-            ->paginate($perPage, ['*'], 'page', $page);
+        $data = $this->modelClass::paginate($perPage, ['*'], 'page', $page);
 
         $content = [
             'data' => $this->modelResource::collection($data),

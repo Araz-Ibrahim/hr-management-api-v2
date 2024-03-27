@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Home\TestController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+$routes = [
+
+//    ['group' => 'super-admin', 'model' => 'tests', 'ctrl' => TestController::class],
+
+];
+
+foreach ($routes as $route) {
+    Route::group(array('prefix' => $route['group']), function () use ($route) {
+        Route::resourceAndList($route['model'], $route['ctrl']);
+    });
+}
+/** ----------- Authenticated Routes ------------ */
+Route::middleware('auth:sanctum')->group(function () use ($routes) {
+//    Route::resource('tests', \App\Http\Controllers\Home\TestController::class);
+
+
 });
