@@ -1,0 +1,16 @@
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use App\Base\BaseModel;
+
+class {{ class }} extends BaseModel
+{
+    const FK = 'id';
+
+    protected $fillable = [
+        //
+    ];
+}
