@@ -92,4 +92,14 @@ class EmployeeController extends BaseController
     {
         return $this->repository->searchEmployees($request);
     }
+
+    public function exportEmployeesCsv(Request $request)
+    {
+        return $this->repository->exportEmployeesCsv($request);
+    }
+
+    public function importEmployeesCsv(Request $request)
+    {
+        return $this->repository->importEmployeesCsv($request);
+    }
 }

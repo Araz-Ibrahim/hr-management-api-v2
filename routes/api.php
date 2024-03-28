@@ -40,4 +40,8 @@ Route::middleware('auth:sanctum')->group(function () use ($routesV1) {
     Route::post('/logout', [UserAuth::class, 'logout']);
 });
 
-/** ----------- Public Routes ------------ */
+/** ----------- Test Route ------------ */
+Route::get('/test', function () {
+    return response()->json(['message' => 'Test route']);
+});
+

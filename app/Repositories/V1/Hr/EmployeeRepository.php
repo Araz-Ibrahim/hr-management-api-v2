@@ -4,6 +4,7 @@ namespace App\Repositories\V1\Hr;
 
 use App\Base\BaseRepository;
 use App\Base\Interfaces\BaseViewInterface;
+use App\Models\V1\Hr\Employee;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
@@ -148,6 +149,79 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
         return response()->json([
             'message' => 'Employees fetched successfully.',
             'employees' => $employees
+        ]);
+    }
+
+    public function exportEmployeesCsv()
+    {
+        // Fetch all employees
+        $employees = $this->model->all();
+
+        // Set headers for CSV file download
+        $headers = [
+            'Content-Type' => 'text/csv',
+            'Content-Disposition' => 'attachment; filename="employees.csv"',
+        ];
+
+        // Create a CSV file
+        $callback = function () use ($employees) {
+            $file = fopen('php://output', 'w');
+
+            // Write headers to the CSV file
+            fputcsv($file, ['ID', 'Name', 'Manager', 'Salary']);
+
+            // Write employee data to the CSV file
+            foreach ($employees as $employee) {
+                fputcsv($file, [
+                    $employee->id,
+                    $employee->name,
+                    $employee->manager->name ?? 'Founder',
+                    $employee->salary,
+                ]);
+            }
+
+            fclose($file);
+        };
+
+        // Return CSV file as a downloadable response
+        return response()->stream($callback, 200, $headers);
+    }
+
+    public function importEmployeesCsv(Request $request)
+    {
+        // Validate the request to ensure a file is uploaded
+        $request->validate([
+            'file' => 'required|mimes:csv,txt',
+        ]);
+
+        // Retrieve the uploaded CSV file
+        $file = $request->file('file');
+
+        // Parse the CSV file
+        $csvData = array_map('str_getcsv', file($file));
+
+        // Remove the first row (column headers)
+        array_shift($csvData);
+
+        foreach ($csvData as $row) {
+            // Assuming the columns are in the order: name, manager, salary
+            $name = $row[0];
+            $managerName = $row[1];
+            $salary = (int) trim($row[2], '"'); // Parse salary as integer and remove double quotes
+
+            // Lookup manager_id based on manager's name
+            $manager = $this->model::where('name', $managerName)->first();
+
+            // Create or update employee record
+            Employee::create([
+                'name' => $name,
+                'manager_id' => $manager ? $manager->id : null,
+                'salary' => $salary,
+            ]);
+        }
+
+        return response()->json([
+            'message' => 'Employees seeded successfully from CSV file.',
         ]);
     }
 
