@@ -3,7 +3,7 @@ php artisan config:cache
 php artisan clear-compiled
 
 php artisan migrate
-php artisan migrate --path=database/migrations/Home
+php artisan migrate --path=database/migrations/V1/Hr
 
 
 php artisan db:seed

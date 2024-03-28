@@ -5,7 +5,7 @@
  * author: (github.com/araz-ibrahim)
  */
 
-/*
+/* Example Usage:
  * $ php artisan make:generate-files "Language" "Home"
  * $ php artisan make:generate-files "Language" ""
  * $ php artisan make:generate-files "Language" "Home" --fac-seed
