@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserAuth;
-use Illuminate\Http\Request;
+use App\Http\Controllers\V1\Hr\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-$routes = [
+$routesV1 = [
 
-//    ['group' => 'super-admin', 'model' => 'tests', 'ctrl' => TestController::class],
+    ['group' => 'hr', 'model' => 'employees', 'ctrl' => EmployeeController::class],
 
 ];
 
@@ -28,10 +28,10 @@ Route::controller(UserAuth::class)->group(function () {
 });
 
 /** ----------- Authenticated Routes ------------ */
-Route::middleware('auth:sanctum')->group(function () use ($routes) {
+Route::middleware('auth:sanctum')->group(function () use ($routesV1) {
 
-    foreach ($routes as $route) {
-        Route::group(array('prefix' => $route['group']), function () use ($route) {
+    foreach ($routesV1 as $route) {
+        Route::group(array('prefix' => 'v1/' . $route['group']), function () use ($route) {
             Route::resourceAndList($route['model'], $route['ctrl']);
         });
     }
