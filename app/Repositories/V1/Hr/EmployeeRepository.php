@@ -102,14 +102,31 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
         ]);
     }
 
-    private function getManagersRecursive($employee, $managers = [])
+    public function findManagersWithSalaries(Request $request)
     {
-        if ($employee->employee_id === null) {
-            return $managers;
+        // Fetch the current employee and its managers up to the founder
+        $employee = $this->model->where('id', $request->id)
+            ->with('manager')->first();
+
+        $currentEmployeeName = $employee->name;
+        $currentEmployeeSalary = $employee->salary;
+        $managers = [];
+
+        // Traverse through the nested manager relationship until reaching the founder
+        while ($employee->manager) {
+            $managers[$employee->manager->name] = $employee->manager->salary;
+            $employee = $employee->manager;
         }
 
-        $managers[] = $employee->manager;
+        // Reverse the array to get the chain from founder to the given employee
+        $managers = array_reverse($managers, true);
 
-        return $this->getManagersRecursive($employee->manager, $managers);
+        // Add the current employee's salary to the list of managers
+        $managers[$currentEmployeeName] = $currentEmployeeSalary;
+
+        return response()->json([
+            'message' => 'Managers with salaries up to the founder fetched successfully.',
+            'managers_with_salaries' => $managers
+        ]);
     }
 }
