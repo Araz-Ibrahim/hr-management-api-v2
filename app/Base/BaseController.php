@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Symfony\Component\HttpFoundation\Response;
@@ -99,7 +100,7 @@ class BaseController extends Controller implements BaseViewInterface
         if ($validator->fails()) {
             return response()->json([$validator->errors()->all()], 422);
         }
-        $data = $this->modelClass->index()->get();
+        $data = $this->modelClass->get();
         return \response()->json([$this->modelResource::collection($data)]);
     }
 
@@ -115,38 +116,38 @@ class BaseController extends Controller implements BaseViewInterface
         if (in_array($method, $this->allowedFunctions)) {
             return $this->$method($request);
         }
-//        return $this->$method($request);
+        return $this->$method($request);
 
         // Calls the method and returns a JSON response with errors
         return response()->json(['something went wrong'], 404);
     }
 
-    public function indexView(Request $request): string
+    public function indexView(Request $request): JsonResponse
     {
         return $this->repository->indexView($request);
     }
 
-    public function createView(Request $request): string
+    public function createView(Request $request): JsonResponse
     {
         return $this->repository->createView($request);
     }
 
-    public function editView(Request $request): string
+    public function editView(Request $request): JsonResponse
     {
         return $this->repository->editView($request);
     }
 
-    public function filterView(Request $request): string
+    public function filterView(Request $request): JsonResponse
     {
         return $this->repository->filterView($request);
     }
 
-    public function showView(Request $request): string
+    public function showView(Request $request): JsonResponse
     {
         return $this->repository->showView($request);
     }
 
-    public function deleteView(Request $request): string
+    public function deleteView(Request $request): JsonResponse
     {
         return $this->repository->deleteView($request);
     }

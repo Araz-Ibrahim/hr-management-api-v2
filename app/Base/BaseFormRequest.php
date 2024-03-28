@@ -2,9 +2,7 @@
 
 namespace App\Base;
 
-use App\Models\SuperAdmin\Log;
 use Illuminate\Foundation\Http\FormRequest;
-use function App\Http\Requests\isSuperAdmin;
 
 class BaseFormRequest extends FormRequest
 {
@@ -32,7 +30,6 @@ class BaseFormRequest extends FormRequest
             default => $this->view()
         };
     }
-    //custom message
 
     /**
      * Get the validation rules that apply to the post request.

@@ -7,6 +7,7 @@ use App\Http\Requests\V1\Hr\EmployeeRequest;
 use App\Http\Resources\V1\Hr\EmployeeResource;
 use App\Models\V1\Hr\Employee;
 use App\Repositories\V1\Hr\EmployeeRepository;
+use Illuminate\Http\Request;
 
 class EmployeeController extends BaseController
 {
@@ -24,9 +25,17 @@ class EmployeeController extends BaseController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(EmployeeRequest $request)
+    function store(EmployeeRequest $request)
     {
-        //
+        try {
+            if ($this->repository->create($request->validationData())) {
+                return response()->json(['message' => 'Employee created successfully']);
+            }
+
+            return response()->json(['message' => 'Employee creation failed.'], 500);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Employee creation failed.'], 500);
+        }
     }
 
     /**
@@ -34,7 +43,15 @@ class EmployeeController extends BaseController
      */
     public function update(EmployeeRequest $request, $id)
     {
-        //
+        try {
+            if ($this->repository->update($id, $request->validationData())) {
+                return response()->json(['message' => 'Employee updated successfully']);
+            }
+
+            return response()->json(['message' => 'Employee update failed.'], 500);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Employee update failed.'], 500);
+        }
     }
 
     /**
@@ -50,6 +67,14 @@ class EmployeeController extends BaseController
      */
     public function destroy(EmployeeRequest $employee)
     {
-        //
+        try {
+            if ($this->repository->deleteById($employee->id)) {
+                return response()->json(['message' => 'Employee deleted successfully']);
+            }
+
+            return response()->json(['message' => 'Employee deletion failed.'], 500);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Employee deletion failed.'], 500);
+        }
     }
 }

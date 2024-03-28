@@ -14,14 +14,18 @@ class EmployeeRequest extends BaseFormRequest
     public function store()
     {
         return [
-            // Validate data for store
+            'name' => 'required|string',
+            'manager_id' => 'required|integer|exists:employees,id',
+            'salary' => 'required|numeric',
         ];
     }
 
     public function update()
     {
         return [
-            // Validate data for update
+            'name' => 'required|string',
+            'manager_id' => 'required|integer|exists:employees,id',
+            'salary' => 'required|numeric',
         ];
     }
 
