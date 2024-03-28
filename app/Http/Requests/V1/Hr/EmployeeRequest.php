@@ -15,6 +15,7 @@ class EmployeeRequest extends BaseFormRequest
     {
         return [
             'name' => 'required|string',
+            'email' => 'required|email|unique:employees,email', // 'unique' rule is added
             'manager_id' => 'required|integer|exists:employees,id',
             'salary' => 'required|numeric',
         ];
@@ -24,6 +25,7 @@ class EmployeeRequest extends BaseFormRequest
     {
         return [
             'name' => 'required|string',
+            'email' => 'required|email|unique:employees,email,' . $this->id, // 'unique' rule is added
             'manager_id' => 'required|integer|exists:employees,id',
             'salary' => 'required|numeric',
         ];

@@ -14,6 +14,7 @@ class Employee extends BaseModel
     protected $table = 'employees';
     protected $fillable = [
         'name',
+        'email',
         'manager_id',
         'salary',
     ];

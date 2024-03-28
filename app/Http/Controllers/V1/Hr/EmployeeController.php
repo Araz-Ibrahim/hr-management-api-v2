@@ -5,9 +5,12 @@ namespace App\Http\Controllers\V1\Hr;
 use App\Base\BaseController;
 use App\Http\Requests\V1\Hr\EmployeeRequest;
 use App\Http\Resources\V1\Hr\EmployeeResource;
+use App\Mail\SalaryChangedMail;
 use App\Models\V1\Hr\Employee;
+use App\Notifications\SalaryChangedNotification;
 use App\Repositories\V1\Hr\EmployeeRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class EmployeeController extends BaseController
 {
@@ -44,13 +47,21 @@ class EmployeeController extends BaseController
     public function update(EmployeeRequest $request, $id)
     {
         try {
-            if ($this->repository->update($id, $request->validationData())) {
+            $employee = $this->repository->findById($id);
+            if ($employee && $this->repository->update($id, $request->validationData())) {
+
+                // if salary is updated, notify the employee by email
+                if ($employee->salary != $request->salary) {
+                    // Send email notification to the employee
+                    Mail::to($request->email)->send(new SalaryChangedMail($request->salary));
+                }
+
                 return response()->json(['message' => 'Employee updated successfully']);
             }
 
             return response()->json(['message' => 'Employee update failed.'], 500);
         } catch (\Exception $e) {
-            return response()->json(['message' => 'Employee update failed.'], 500);
+            return response()->json(['message' => $e->getMessage()], 500);
         }
     }
 

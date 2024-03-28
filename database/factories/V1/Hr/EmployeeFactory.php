@@ -18,6 +18,7 @@ class EmployeeFactory extends Factory
     {
         return [
             'name' => fake()->name(),
+            'email' => fake()->email(),
             'salary' => fake()->numberBetween(4, 8) * 1000,
         ];
     }
