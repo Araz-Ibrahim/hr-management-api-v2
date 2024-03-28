@@ -129,4 +129,26 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
             'managers_with_salaries' => $managers
         ]);
     }
+
+    public function searchEmployees(Request $request)
+    {
+        $searchTerm = $request->input('search');
+
+        // If no search term provided, return all employees
+        if (!$searchTerm) {
+            $employees = $this->model->all();
+        } else {
+            // Search for employees by name or salary containing the provided search term
+            $employees = $this->model
+                ->where('name', 'like', '%' . $searchTerm . '%')
+                ->orWhere('salary', 'like', '%' . $searchTerm . '%')
+                ->get();
+        }
+
+        return response()->json([
+            'message' => 'Employees fetched successfully.',
+            'employees' => $employees
+        ]);
+    }
+
 }

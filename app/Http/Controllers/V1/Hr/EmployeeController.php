@@ -87,4 +87,9 @@ class EmployeeController extends BaseController
     {
         return $this->repository->findManagersWithSalaries($request);
     }
+
+    public function searchEmployees(Request $request)
+    {
+        return $this->repository->searchEmployees($request);
+    }
 }
