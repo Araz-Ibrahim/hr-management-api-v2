@@ -5,6 +5,7 @@ namespace App\Models\V1\Hr;
 use App\Base\BaseModel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Employee extends BaseModel
 {
@@ -17,18 +18,8 @@ class Employee extends BaseModel
         'salary',
     ];
 
-    public function manager(): BelongsTo
+    public function manager(): HasOne
     {
-        return $this->belongsTo(Employee::class, 'manager_id');
-    }
-
-    public function managers(): HasMany
-    {
-        return $this->hasMany(Employee::class, 'manager_id')->with('managers');
-    }
-
-    public function isFounder(): bool
-    {
-        return is_null($this->manager_id);
+        return $this->hasOne(Employee::class, 'id', 'manager_id')->with('manager');
     }
 }

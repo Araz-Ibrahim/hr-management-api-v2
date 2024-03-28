@@ -77,4 +77,9 @@ class EmployeeController extends BaseController
             return response()->json(['message' => 'Employee deletion failed.'], 500);
         }
     }
+
+    public function findManagers(Request $request)
+    {
+        return $this->repository->findManagers($request);
+    }
 }

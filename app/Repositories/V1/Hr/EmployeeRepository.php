@@ -74,4 +74,42 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
             'employee' => $employee
         ]);
     }
+
+    public function findManagers(Request $request)
+    {
+        // Fetch all managers up to the founder
+        $employee = $this->model->where('id', $request->id)
+            ->with('manager')->first();
+
+        $currentEmployeeName = $employee->name;
+        $managers = [];
+
+        // Traverse through the nested manager relationship until reaching the founder
+        while ($employee->manager) {
+            $managers[] = $employee->manager->name;
+            $employee = $employee->manager;
+        }
+
+        // Reverse the array to get the chain from founder to the given employee
+        $managers = array_reverse($managers);
+
+        // Add the current employee's name to the list of managers
+        $managers[] = $currentEmployeeName;
+
+        return response()->json([
+            'message' => 'Managers up to the founder fetched successfully.',
+            'managers' => $managers
+        ]);
+    }
+
+    private function getManagersRecursive($employee, $managers = [])
+    {
+        if ($employee->employee_id === null) {
+            return $managers;
+        }
+
+        $managers[] = $employee->manager;
+
+        return $this->getManagersRecursive($employee->manager, $managers);
+    }
 }
