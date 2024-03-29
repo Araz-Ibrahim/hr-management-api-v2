@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Database\Seeders\V1\Hr\EmployeeJobSeeder;
 use Database\Seeders\V1\Hr\EmployeeSeeder;
+use Database\Seeders\V1\Hr\JobSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,7 +24,8 @@ class DatabaseSeeder extends Seeder
 
         // Call the seeders
         $this->call([
+            JobSeeder::class,
             EmployeeSeeder::class,
-            ]);
+        ]);
     }
 }

@@ -1,0 +1,47 @@
+<?php
+
+namespace App\Repositories\V1\Hr;
+
+use App\Base\BaseRepository;
+use App\Base\Interfaces\BaseViewInterface;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
+
+class JobRepository extends BaseRepository implements BaseViewInterface
+{
+    public function __construct(Model $model)
+    {
+        parent::__construct($model); // call the parent constructor
+    }
+
+    public function indexView(Request $request): JsonResponse
+    {
+        // Implement indexView() method.
+    }
+
+    public function createView(Request $request): JsonResponse
+    {
+        // Implement createView() method.
+    }
+
+    public function editView(Request $request): JsonResponse
+    {
+        // Implement editView() method.
+    }
+
+    public function filterView(Request $request): JsonResponse
+    {
+        // Implement filterView() method.
+    }
+
+    public function showView(Request $request): JsonResponse
+    {
+        // Implement showView() method.
+    }
+
+    public function deleteView(Request $request): JsonResponse
+    {
+        // Implement deleteView() method.
+    }
+}

@@ -12,7 +12,7 @@
  * $ php artisan make:generate-files "Language" "Home" --policy
  * $ php artisan make:generate-files "Language" "Home" --fac-seed --policy
  * $ php artisan make:generate-files "Language" "Home" --fac-seed
- * $ php artisan make:generate-files "Language" "Home/Blog" --fac-seed
+ * $ php artisan make:generate-files "Language" "v1/Blog" --fac-seed
 */
 
 namespace App\Console\Commands;
