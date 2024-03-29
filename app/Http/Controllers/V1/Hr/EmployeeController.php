@@ -21,7 +21,7 @@ class EmployeeController extends BaseController
       $this->modelResource = EmployeeResource::class;
       $this->formRequest = new EmployeeRequest();
       $this->repository = new EmployeeRepository($this->modelClass);
-      $this->allowedFunctions = [];
+      $this->allowedFunctions = ['findManagers', 'findManagersWithSalaries', 'searchEmployees', 'exportEmployeesCsv', 'importEmployeesCsv'];
     }
 
     /**

@@ -112,14 +112,17 @@ class BaseController extends Controller implements BaseViewInterface
      */
     public function callMethod(Request $request, $method)
     {
-        // Checks if the method is allowed and calls it
-        if (in_array($method, $this->allowedFunctions)) {
+        // Convert all allowed functions to lowercase
+        $allowedFunctionsLower = array_map('strtolower', $this->allowedFunctions);
+
+        // Check if the method is allowed (case-insensitive)
+        if (in_array(strtolower($method), $allowedFunctionsLower)) {
+            // Call the method
             return $this->$method($request);
         }
-        return $this->$method($request);
 
-        // Calls the method and returns a JSON response with errors
-        return response()->json(['something went wrong'], 404);
+        // Method not allowed, return JSON response with error
+        return response()->json(['error' => 'Method not allowed'], 405);
     }
 
     public function indexView(Request $request): JsonResponse
