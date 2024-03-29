@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\V1\Hr\EmployeeController;
+use App\Http\Controllers\V1\Hr\JobController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,10 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-$routesV1 = [
-
-    ['group' => 'hr', 'model' => 'employees', 'ctrl' => EmployeeController::class],
-
+$routes = [
+    'v1' => [
+        ['group' => 'hr', 'model' => 'employees', 'ctrl' => EmployeeController::class],
+        ['group' => 'hr', 'model' => 'jobs', 'ctrl' => JobController::class],
+        // Add more routes for version 1 here if needed
+    ],
+    'v2' => [
+        // Add routes for version 2 here
+    ],
+    // Add more versions as needed
 ];
 
 /** --------- Register and Login ----------- */
@@ -28,12 +35,13 @@ Route::controller(UserAuth::class)->group(function () {
 });
 
 /** ----------- Authenticated Routes ------------ */
-Route::middleware('auth:sanctum')->group(function () use ($routesV1) {
-
-    foreach ($routesV1 as $route) {
-        Route::group(array('prefix' => 'v1/' . $route['group']), function () use ($route) {
-            Route::resourceAndList($route['model'], $route['ctrl']);
-        });
+Route::middleware('auth:sanctum')->group(function () use ($routes) {
+    foreach ($routes as $version => $versionRoutes) {
+        foreach ($versionRoutes as $route) {
+            Route::group(['prefix' => $version . '/' . $route['group']], function () use ($route) {
+                Route::resourceAndList($route['model'], $route['ctrl']);
+            });
+        }
     }
 
     // Users
