@@ -11,7 +11,8 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\DeleteOldEmployeeLogs::class,
         \App\Console\Commands\ClearLogs::class,
         \App\Console\Commands\InsertEmployees::class,
-        \App\Console\Commands\ExportDatabaseSql::class,
+        \App\Console\Commands\ExportDatabase::class,
+        \App\Console\Commands\ExportEmployees::class,
         // Other commands...
     ];
 

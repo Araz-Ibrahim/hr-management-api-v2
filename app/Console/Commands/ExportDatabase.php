@@ -5,7 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 
-class ExportDatabaseSql extends Command
+class ExportDatabase extends Command
 {
     /**
      * The name and signature of the console command.
