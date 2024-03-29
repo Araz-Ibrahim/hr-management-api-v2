@@ -5,6 +5,7 @@ namespace App\Repositories\V1\Hr;
 use App\Base\BaseRepository;
 use App\Base\Interfaces\BaseViewInterface;
 use App\Models\V1\Hr\Employee;
+use App\Models\V1\Hr\Job;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
@@ -34,8 +35,10 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
     public function editView(Request $request): JsonResponse
     {
         $currentEmployee = $this->model->leftJoin('employees as manager', 'employees.manager_id', '=', 'manager.id')
+            ->leftJoin('employee_jobs as job', 'employees.job_id', '=', 'job.id')
             ->where('employees.id', $request->id)
-            ->select('employees.id', 'employees.name', 'employees.manager_id', 'employees.salary', 'manager.id as manager_id', 'manager.name as manager_name')
+            ->select('employees.id', 'employees.name', 'employees.email', 'employees.manager_id', 'employees.salary', 'manager.id as manager_id', 'manager.name as manager_name',
+                'job.id as job_id', 'job.title as job_title')
             ->first();
 
         $employees = $this->model->where('id', '!=', $request->id)
@@ -56,8 +59,10 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
     public function showView(Request $request): JsonResponse
     {
         $employee = $this->model->leftJoin('employees as manager', 'employees.manager_id', '=', 'manager.id')
+            ->leftJoin('employee_jobs as job', 'employees.job_id', '=', 'job.id')
             ->where('employees.id', $request->id)
-            ->select('employees.id', 'employees.name', 'employees.manager_id', 'employees.salary', 'manager.id as manager_id', 'manager.name as manager_name')
+            ->select('employees.id', 'employees.name', 'employees.email','employees.manager_id', 'employees.salary', 'manager.id as manager_id', 'manager.name as manager_name',
+                'job.id as job_id', 'job.title as job_title')
             ->first();
 
         return response()->json([
@@ -141,8 +146,11 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
         } else {
             // Search for employees by name or salary containing the provided search term
             $employees = $this->model
-                ->where('name', 'like', '%' . $searchTerm . '%')
-                ->orWhere('salary', 'like', '%' . $searchTerm . '%')
+                ->where('employees.name', 'like', '%' . $searchTerm . '%')
+                ->orWhere('employees.salary', 'like', '%' . $searchTerm . '%')
+                ->leftJoin('employees as manager', 'employees.manager_id', '=', 'manager.id')
+                ->leftJoin('employee_jobs as job', 'employees.job_id', '=', 'job.id')
+                ->select('employees.id', 'employees.name', 'employees.email','employees.salary', 'manager.name as manager_name', 'job.title as job_title')
                 ->get();
         }
 
@@ -168,14 +176,16 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
             $file = fopen('php://output', 'w');
 
             // Write headers to the CSV file
-            fputcsv($file, ['ID', 'Name', 'Manager', 'Salary']);
+            fputcsv($file, ['ID', 'Name', 'Email', 'Manager', 'Job', 'Salary']);
 
             // Write employee data to the CSV file
             foreach ($employees as $employee) {
                 fputcsv($file, [
                     $employee->id,
                     $employee->name,
-                    $employee->manager->name ?? 'Founder',
+                    $employee->email,
+                    $employee->manager->name ?? 'N/A',
+                    $employee->job->title,
                     $employee->salary,
                 ]);
             }
@@ -205,17 +215,22 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
 
         foreach ($csvData as $row) {
             // Assuming the columns are in the order: name, manager, salary
-            $name = $row[0];
-            $managerName = $row[1];
-            $salary = (int) trim($row[2], '"'); // Parse salary as integer and remove double quotes
+            $name = $row[1];
+            $email = $row[2];
+            $managerName = $row[3];
+            $jobTitle = $row[4];
+            $salary = (int) trim($row[5], '"'); // Parse salary as integer and remove double quotes
 
             // Lookup manager_id based on manager's name
             $manager = $this->model::where('name', $managerName)->first();
+            $job = Job::where('title', $jobTitle)->first() ?? Job::create(['title' => $jobTitle]);
 
             // Create or update employee record
             Employee::create([
                 'name' => $name,
+                'email' => $email,
                 'manager_id' => $manager ? $manager->id : null,
+                'job_id' => $job->id,
                 'salary' => $salary,
             ]);
         }

@@ -7,7 +7,6 @@ use App\Http\Requests\V1\Hr\EmployeeRequest;
 use App\Http\Resources\V1\Hr\EmployeeResource;
 use App\Mail\SalaryChangedMail;
 use App\Models\V1\Hr\Employee;
-use App\Notifications\SalaryChangedNotification;
 use App\Repositories\V1\Hr\EmployeeRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
