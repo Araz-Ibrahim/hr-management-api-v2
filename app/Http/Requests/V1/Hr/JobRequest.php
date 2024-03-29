@@ -15,14 +15,14 @@ class JobRequest extends BaseFormRequest
     public function store()
     {
         return [
-            // Validate data for store
+            'title' => 'required|string|max:255|unique:employee_jobs,title',
         ];
     }
 
     public function update()
     {
         return [
-            // Validate data for update
+            'title' => 'required|string|max:255|unique:employee_jobs,title,' . $this->id,
         ];
     }
 

@@ -22,12 +22,19 @@ class JobRepository extends BaseRepository implements BaseViewInterface
 
     public function createView(Request $request): JsonResponse
     {
-        // Implement createView() method.
+        return response()->json([
+            'message' => 'Job creation form opened successfully.',
+        ]);
     }
 
     public function editView(Request $request): JsonResponse
     {
-        // Implement editView() method.
+        $job = $this->model->find($request->id);
+
+        return response()->json([
+            'message' => 'Job edit form opened successfully.',
+            'job' => $job,
+        ]);
     }
 
     public function filterView(Request $request): JsonResponse
@@ -37,11 +44,21 @@ class JobRepository extends BaseRepository implements BaseViewInterface
 
     public function showView(Request $request): JsonResponse
     {
-        // Implement showView() method.
+        $job = $this->model->find($request->id);
+
+        return response()->json([
+            'message' => 'Job details opened successfully.',
+            'job' => $job,
+        ]);
     }
 
     public function deleteView(Request $request): JsonResponse
     {
-        // Implement deleteView() method.
+        $job = $this->model->find($request->id);
+
+        return response()->json([
+            'message' => 'Job deletion form opened successfully.',
+            'job' => $job,
+        ]);
     }
 }

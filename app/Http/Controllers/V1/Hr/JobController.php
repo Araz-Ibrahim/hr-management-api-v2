@@ -28,7 +28,15 @@ class JobController extends BaseController
      */
     public function store(JobRequest $request)
     {
-        //
+        try {
+            if ($this->repository->create($request->validationData())) {
+                return response()->json(['message' => 'Job created successfully']);
+            }
+
+            return response()->json(['message' => 'Job creation failed.'], 500);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Job creation failed.'], 500);
+        }
     }
 
     /**
@@ -36,7 +44,16 @@ class JobController extends BaseController
      */
     public function update(JobRequest $request, $id)
     {
-        //
+        try {
+            $job = $this->repository->findById($id);
+            if ($job && $this->repository->update($id, $request->validationData())) {
+                return response()->json(['message' => 'Job updated successfully']);
+            }
+
+            return response()->json(['message' => 'Job update failed.'], 500);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Job update failed.'], 500);
+        }
     }
 
     /**
@@ -52,6 +69,14 @@ class JobController extends BaseController
      */
     public function destroy(JobRequest $job)
     {
-        //
+        try {
+            if ($this->repository->deleteById($job->id)) {
+                return response()->json(['message' => 'Job deleted successfully']);
+            }
+
+            return response()->json(['message' => 'Job deletion failed.'], 500);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Job deletion failed.'], 500);
+        }
     }
 }
