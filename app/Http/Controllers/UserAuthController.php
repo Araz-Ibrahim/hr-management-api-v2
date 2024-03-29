@@ -8,7 +8,7 @@ use App\Traits\ApiResponseTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class UserAuth extends Controller
+class UserAuthController extends Controller
 {
     use ApiResponseTrait;
 
@@ -24,7 +24,7 @@ class UserAuth extends Controller
             'name' => 'required|min:4|max:100',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:6',
-            'c_password' => 'required|same:password',
+            'confirm_password' => 'required|same:password',
         ]);
 
         if ($validator->fails()) {

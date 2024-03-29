@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\UserAuth;
+use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\V1\Hr\EmployeeController;
 use App\Http\Controllers\V1\Hr\JobController;
 use Illuminate\Support\Facades\Route;
@@ -29,7 +29,7 @@ $routes = [
 ];
 
 /** --------- Register and Login ----------- */
-Route::controller(UserAuth::class)->group(function () {
+Route::controller(UserAuthController::class)->group(function () {
     Route::post('register', 'register');
     Route::post('login', 'login');
 });
@@ -45,7 +45,7 @@ Route::middleware('auth:sanctum')->group(function () use ($routes) {
     }
 
     // Users
-    Route::post('/logout', [UserAuth::class, 'logout']);
+    Route::post('/logout', [UserAuthController::class, 'logout']);
 });
 
 /** ----------- Test Route ------------ */
