@@ -9,6 +9,7 @@ class Kernel extends ConsoleKernel
 {
     protected $commands = [
         \App\Console\Commands\DeleteOldEmployeeLogs::class,
+        \App\Console\Commands\ClearLogs::class,
         // Other commands...
     ];
 
