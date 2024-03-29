@@ -45,8 +45,7 @@ class JobController extends BaseController
     public function update(JobRequest $request, $id)
     {
         try {
-            $job = $this->repository->findById($id);
-            if ($job && $this->repository->update($id, $request->validationData())) {
+            if ($this->repository->update($id, $request->validationData())) {
                 return response()->json(['message' => 'Job updated successfully']);
             }
 

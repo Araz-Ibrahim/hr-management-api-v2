@@ -26,7 +26,7 @@ class EmployeeObserver
     {
         $changes = [];
 
-        if($saveChanges) {
+        if ($saveChanges) {
 
             foreach ($employee->getDirty() as $attribute => $value) {
 
@@ -42,7 +42,6 @@ class EmployeeObserver
                 ];
             }
         }
-
 
         EmployeeLog::create([
             'action' => $action,
