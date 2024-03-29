@@ -30,6 +30,11 @@ class EmployeeController extends BaseController
     function store(EmployeeRequest $request)
     {
         try {
+            // Check if the job_id is 1 and there is already a founder
+            if ($request->job_id == 1 && $this->modelClass->where('job_id', 1)->count() > 0) {
+                return response()->json(['message' => 'Already have a founder.'], 400);
+            }
+
             if ($this->repository->create($request->validationData())) {
                 return response()->json(['message' => 'Employee created successfully']);
             }
@@ -46,6 +51,11 @@ class EmployeeController extends BaseController
     public function update(EmployeeRequest $request, $id)
     {
         try {
+            // Check if the job_id is 1 and there is already a founder
+            if ($request->job_id == 1 && $this->modelClass->where('job_id', 1)->where('id', '!=', $id)->count() > 0) {
+                return response()->json(['message' => 'Already have a founder.'], 400);
+            }
+
             $employee = $this->repository->findById($id);
             if ($employee && $this->repository->update($id, $request->validationData())) {
 

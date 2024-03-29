@@ -91,7 +91,7 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
         $managers = [];
 
         // Traverse through the nested manager relationship until reaching the founder
-        while ($employee->manager) {
+        while ($employee->manager && $employee->job_id !== 1) {
             $managers[] = $employee->manager->name;
             $employee = $employee->manager;
         }

@@ -3,12 +3,22 @@
 namespace App\Http\Requests\V1\Hr;
 
 use App\Base\BaseFormRequest;
+use App\Models\V1\Hr\Employee;
 
 class EmployeeRequest extends BaseFormRequest
 {
     protected function prepareForValidation()
     {
-        // Prepare data before validation
+        // Check if the job_id is 1 and should not have a manager (manager_id should be null)
+        if ($this->job_id == 1) {
+            $this->merge(['manager_id' => null]);
+        }
+
+        // Check if the job_id is not 1 and should have a manager (manager_id should not be null) by default set the founder as the manager
+        if ($this->job_id != 1 && $this->manager_id == null) {
+            $getFounderId = Employee::where('job_id', 1)->first();
+            $this->merge(['manager_id' => $getFounderId->id]);
+        }
     }
 
     public function store()
@@ -16,7 +26,7 @@ class EmployeeRequest extends BaseFormRequest
         return [
             'name' => 'required|string',
             'email' => 'required|email|unique:employees,email', // 'unique' rule is added
-            'manager_id' => 'required|integer|exists:employees,id',
+            'manager_id' => 'nullable|integer|exists:employees,id',
             'job_id' => 'required|integer|exists:employee_jobs,id',
             'salary' => 'required|numeric',
         ];
@@ -27,7 +37,7 @@ class EmployeeRequest extends BaseFormRequest
         return [
             'name' => 'required|string',
             'email' => 'required|email|unique:employees,email,' . $this->id, // 'unique' rule is added
-            'manager_id' => 'required|integer|exists:employees,id',
+            'manager_id' => 'nullable|integer|exists:employees,id',
             'job_id' => 'required|integer|exists:employee_jobs,id',
             'salary' => 'required|numeric',
         ];
