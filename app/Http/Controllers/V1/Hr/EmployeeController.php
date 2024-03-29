@@ -88,13 +88,15 @@ class EmployeeController extends BaseController
     public function destroy(EmployeeRequest $employee)
     {
         try {
+            \Log::info('Employee deleted: ' . $employee->id);
             if ($this->repository->deleteById($employee->id)) {
+                \Log::info('Employee deleted successfully: ' . $employee->id);
                 return response()->json(['message' => 'Employee deleted successfully']);
             }
 
             return response()->json(['message' => 'Employee deletion failed.'], 500);
         } catch (\Exception $e) {
-            return response()->json(['message' => 'Employee deletion failed.'], 500);
+            return response()->json(['message' => $e->getMessage()], 500);
         }
     }
 
