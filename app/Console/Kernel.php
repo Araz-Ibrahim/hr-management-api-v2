@@ -11,6 +11,7 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\DeleteOldEmployeeLogs::class,
         \App\Console\Commands\ClearLogs::class,
         \App\Console\Commands\InsertEmployees::class,
+        \App\Console\Commands\ExportDatabaseSql::class,
         // Other commands...
     ];
 
@@ -20,7 +21,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         // $schedule->command('inspire')->hourly();
-        $schedule->command('logs:delete-old-employee-logs')->monthly();
+
+        // $schedule->command('logs:delete-old-employee-logs')->monthly();
 
     }
 
