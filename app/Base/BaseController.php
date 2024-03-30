@@ -23,6 +23,7 @@ class BaseController extends Controller implements BaseViewInterface
     public Model $modelClass; // Holds the class name of the model
     protected string $modelResource; // Holds the name of the resource for the model
     protected array $allowedFunctions = []; // Holds a list of allowed functions for the controller
+    private array $defaultAllowedFunctions = ['indexView', 'editView', 'createView', 'showView', 'deleteView'];
 
     /**
      * The constructor initializes the $allowedFunctions array to include the
@@ -30,11 +31,7 @@ class BaseController extends Controller implements BaseViewInterface
      */
     public function __construct()
     {
-        // Add the default allowed functions to the list
-        $this->allowedFunctions = array_unique(array_merge(
-            $this->allowedFunctions,
-            ['indexView', 'editView', 'createView', 'showView', 'deleteView']
-        ));
+        // Construct the repository
     }
 
 
@@ -113,8 +110,12 @@ class BaseController extends Controller implements BaseViewInterface
     public function callMethod(Request $request, $method)
     {
         // Convert all allowed functions to lowercase
-        $allowedFunctionsLower = array_map('strtolower', $this->allowedFunctions);
-
+        \Log::info($this->allowedFunctions);
+        $allowedFunctionsLower = array_map('strtolower', array_unique(array_merge(
+            $this->allowedFunctions,
+            $this->defaultAllowedFunctions
+        )));
+        \Log::info($allowedFunctionsLower);
         // Check if the method is allowed (case-insensitive)
         if (in_array(strtolower($method), $allowedFunctionsLower)) {
             // Call the method
