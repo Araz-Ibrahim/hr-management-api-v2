@@ -16,6 +16,8 @@ Make sure you have the following installed on your machine:
 - Composer (version 2.6.5 or higher)
 - MySQL (version 8.1 or higher)
 
+---
+
 ## Steps
 
 #### 1. Clone the repository
