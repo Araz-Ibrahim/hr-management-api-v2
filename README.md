@@ -54,6 +54,12 @@ bash run.sh
 php artisan serve
 ```
 ---
+
+### Database File
+
+- **File Path**: `root/migrations/data/database.sql`
+- **Link**: [database.sql](https://github.com/Araz-Ibrahim/hr-management-api/blob/main/database/data/database.sql)
+
 ### Postman Collection
 
 - **File Path**: `root/postman/v1.postman_collection.json`
