@@ -12,6 +12,7 @@ Follow these steps to set up and run the project locally.
 
 Make sure you have the following installed on your machine:
 
+- Laravel (version 10)
 - PHP (version 8.2.11 or higher)
 - Composer (version 2.6.5 or higher)
 - MySQL (version 8.1 or higher)
