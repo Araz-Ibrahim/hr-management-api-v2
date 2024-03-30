@@ -52,3 +52,15 @@ bash run.sh
 ```bash
 php artisan serve
 ```
+---
+### Postman Collection
+
+- **File Path**: `root/postman/v1.postman_collection.json`
+- **Link**: [v1.postman_collection.json](https://github.com/Araz-Ibrahim/hr-management-api/blob/main/postman/v1.postman_collection.json)
+
+### Postman API Documentation
+
+- **Link**: [API Documentation](https://documenter.getpostman.com/view/25810383/2sA35G4N2V)
+
+
+
