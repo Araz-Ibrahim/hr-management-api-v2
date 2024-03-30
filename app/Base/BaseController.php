@@ -110,12 +110,11 @@ class BaseController extends Controller implements BaseViewInterface
     public function callMethod(Request $request, $method)
     {
         // Convert all allowed functions to lowercase
-        \Log::info($this->allowedFunctions);
         $allowedFunctionsLower = array_map('strtolower', array_unique(array_merge(
             $this->allowedFunctions,
             $this->defaultAllowedFunctions
         )));
-        \Log::info($allowedFunctionsLower);
+
         // Check if the method is allowed (case-insensitive)
         if (in_array(strtolower($method), $allowedFunctionsLower)) {
             // Call the method

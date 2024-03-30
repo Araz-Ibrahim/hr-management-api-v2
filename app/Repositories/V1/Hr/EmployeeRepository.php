@@ -83,6 +83,11 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
 
     public function findManagers(Request $request)
     {
+        // Validate the request to ensure an employee ID is provided
+        $request->validate([
+            'id' => 'required|exists:employees,id',
+        ]);
+
         // Fetch all managers up to the founder
         $employee = $this->model->where('id', $request->id)
             ->with('manager')->first();
@@ -110,6 +115,12 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
 
     public function findManagersWithSalaries(Request $request)
     {
+        // Validate the request to ensure an employee ID is provided
+        $request->validate([
+            'id' => 'required|exists:employees,id',
+        ]);
+
+
         // Fetch the current employee and its managers up to the founder
         $employee = $this->model->where('id', $request->id)
             ->with('manager')->first();
@@ -120,6 +131,7 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
 
         // Traverse through the nested manager relationship until reaching the founder
         while ($employee->manager) {
+            \Log::info($managers);
             $managers[$employee->manager->name] = $employee->manager->salary;
             $employee = $employee->manager;
         }
