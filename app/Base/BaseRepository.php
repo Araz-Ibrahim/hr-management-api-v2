@@ -6,6 +6,12 @@ use App\Base\Interfaces\EloquentRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * BaseRepository Class
+ *
+ * This class provides a base implementation of the EloquentRepositoryInterface
+ * for CRUD operations on Eloquent models.
+ */
 class BaseRepository implements EloquentRepositoryInterface
 {
     protected Model $model;

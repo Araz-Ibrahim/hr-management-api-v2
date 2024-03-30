@@ -14,7 +14,10 @@ use Symfony\Component\HttpFoundation\Response;
 //use Illuminate\Support\Facades\Validator;
 
 /**
- * The BaseController class serves as the parent class for all controllers in the application, and implements the BaseViewInterface.
+ * BaseController Class
+ *
+ * The BaseController class serves as the parent class for all controllers in the application,
+ * and implements the BaseViewInterface.
  */
 class BaseController extends Controller implements BaseViewInterface
 {
@@ -55,7 +58,7 @@ class BaseController extends Controller implements BaseViewInterface
         $data = $this->modelClass::paginate($perPage, ['*'], 'page', $page);
 
         $content = [
-            'data' => $this->modelResource::collection($data),
+            'data' => $data,
         ];
 
         return response($content, Response::HTTP_OK);
