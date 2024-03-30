@@ -18,6 +18,8 @@ return new class extends Migration
             $table->foreign('job_id')->references('id')->on('employee_jobs')
                 ->onDelete('cascade');
         });
+
+        // for other tables
     }
 
     /**
@@ -28,5 +30,7 @@ return new class extends Migration
         Schema::table('employees', function (Blueprint $table) {
             $table->dropForeign(['manager_id', 'job_id']);
         });
+
+        // for other tables
     }
 };
