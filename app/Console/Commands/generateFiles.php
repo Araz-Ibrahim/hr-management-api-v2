@@ -61,6 +61,7 @@ class generateFiles extends Command
         $resourcePath = "{$modelPath}Resource";
         $factoryPath = "{$modelPath}Factory";
         $seederPath = "{$modelPath}Seeder";
+        $testPath = "{$modelPath}Test";
         $migrationName = "create_".strtolower($modelName)."_table";
         $policyPath = "{$modelPath}Policy";
         $makeFactoryAndSeeder = $this->option('fac-seed') === true;
@@ -114,6 +115,11 @@ class generateFiles extends Command
                 'name' => $seederPath
             ]);
         }
+
+        // Generate test class file
+        $this->call('make:test', [
+            'name' => $testPath
+        ]);
 
         // Generate policy class file
         if ($makePolicy) {
