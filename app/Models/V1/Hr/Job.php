@@ -15,4 +15,9 @@ class Job extends BaseModel
     protected $fillable = [
         'title',
     ];
+
+    public function employees()
+    {
+        return $this->hasMany(Employee::class, 'job_id', 'id');
+    }
 }

@@ -19,30 +19,34 @@ class EmployeeSeeder extends Seeder
         }
 
         //create the founder that is manager_id = null
-        $founder = Employee::factory()->create([
-            'name' => 'Founder',
-            'manager_id' => null,
-            'job_id' => Job::where('title', 'Founder')->first()->id ?? Job::factory()->create([
-                'title' => 'Founder',
-            ])->id,
-            'salary' => 100000,
-        ]);
+        $founder = Employee::withoutEvents(function () {
+            return Employee::factory()->create([
+                'name' => 'Founder',
+                'manager_id' => null,
+                'job_id' => 1,
+                'salary' => 100000,
+            ]);
+        });
 
         // get all jobs except the founder
-        $jobs = Job::where('title', '!=', 'Founder')->get();
+        $jobs = Job::where('id', '!=', 1)->get();
 
         //create 5 managers
-        $managers = Employee::factory()->count(5)->create([
-            'manager_id' => $founder->id,
-            'job_id' => $jobs->pluck('id')->shuffle()->first(),
-        ]);
+        $managers = Employee::withoutEvents(function () use ($founder, $jobs) {
+            return Employee::factory()->count(5)->create([
+                'manager_id' => $founder->id,
+                'job_id' => $jobs->pluck('id')->shuffle()->first(),
+            ]);
+        });
 
         //create 25 employees
         for ($i = 0; $i < 25; $i++) {
-            Employee::factory()->create([
-                'manager_id' => $managers->pluck('id')->shuffle()->first(),
-                'job_id' => $jobs->pluck('id')->shuffle()->first(),
-            ]);
+            Employee::withoutEvents(function () use ($managers, $jobs) {
+                return Employee::factory()->create([
+                    'manager_id' => $managers->pluck('id')->shuffle()->first(),
+                    'job_id' => $jobs->pluck('id')->shuffle()->first(),
+                ]);
+            });
         }
     }
 }

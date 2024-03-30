@@ -69,6 +69,17 @@ class JobController extends BaseController
     public function destroy(JobRequest $job)
     {
         try {
+            // Check if the job is assigned to any employee
+            if ($this->repository->findById($job->id)->employees()->count() > 0) {
+                return response()->json(['message' => 'Job is assigned to an employee.'], 400);
+            }
+
+            // can't delete the founder job
+            if ($job->id == 1) {
+                return response()->json(['message' => 'Can\'t delete the founder job.'], 400);
+            }
+
+            // delete the job
             if ($this->repository->deleteById($job->id)) {
                 return response()->json(['message' => 'Job deleted successfully']);
             }
