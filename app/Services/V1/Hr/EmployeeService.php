@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\v1\hr\employee;
+namespace App\Services\V1\Hr;
 
 use App\Models\V1\Hr\Employee;
 use App\Models\V1\Hr\Job;

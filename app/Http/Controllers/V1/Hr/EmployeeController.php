@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\Hr\EmployeeRequest;
 use App\Mail\SalaryChangedMail;
 use App\Models\V1\Hr\Employee;
-use App\Services\v1\hr\employee\EmployeeService;
+use App\Services\V1\Hr\EmployeeService;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -106,11 +106,11 @@ class EmployeeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(EmployeeRequest $employee)
+    public function destroy($id)
     {
         try {
             // Find the employee by ID
-            $employee = Employee::findOrFail($employee->id);
+            $employee = Employee::findOrFail($id);
 
             if ($employee->delete()) {
                 return response()->json(['message' => 'Employee deleted successfully']);

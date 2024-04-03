@@ -2,25 +2,42 @@
 
 namespace App\Http\Controllers\V1\Hr;
 
-use App\Base\BaseController;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\Hr\JobRequest;
-use App\Http\Resources\V1\Hr\JobResource;
 use App\Models\V1\Hr\Job;
-use App\Repositories\V1\Hr\JobRepository;
+use App\Services\V1\Hr\JobService;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
-class JobController extends BaseController
+class JobController extends Controller
 {
+
+    public Model $model;
+    private mixed $service;
+
     public function __construct()
     {
-      parent::__construct();
+        $this->model = new Job();
+        $this->service = new JobService();
+    }
 
-      $this->modelClass = new Job();
-      $this->modelResource = JobResource::class;
-      $this->formRequest = new JobRequest();
-      $this->repository = new JobRepository($this->modelClass);
-      $this->allowedFunctions = [];
+    /**
+     * Display a listing of the resource.
+     */
+    public function index(Request $request) {
+        // Set the default values for page and perPage
+        $page = $request->input('page', 1);
+        $perPage = $request->input('perPage', 10);
+
+        // Fetch paginated fonts data
+        $data = $this->model::paginate($perPage, ['*'], 'page', $page);
+
+        $content = [
+            'message' => 'Jobs fetched successfully.',
+            'list' => $data,
+        ];
+
+        return response($content, 200);
     }
 
     /**
@@ -29,7 +46,7 @@ class JobController extends BaseController
     public function store(JobRequest $request)
     {
         try {
-            if ($this->repository->create($request->validationData())) {
+            if (Job::create($request->validated())) {
                 return response()->json(['message' => 'Job created successfully']);
             }
 
@@ -45,13 +62,16 @@ class JobController extends BaseController
     public function update(JobRequest $request, $id)
     {
         try {
-            if ($this->repository->update($id, $request->validationData())) {
+
+            $job = $this->model->findOrFail($id);
+
+            if ($job && $job->update($request->validated())) {
                 return response()->json(['message' => 'Job updated successfully']);
             }
 
-            return response()->json(['message' => 'Job update failed.'], 500);
+            return response()->json(['message' => 'Job not found.'], 404);
         } catch (\Exception $e) {
-            return response()->json(['message' => 'Job update failed.'], 500);
+            return response()->json(['message' => 'Job update failed.'], 400);
         }
     }
 
@@ -66,11 +86,15 @@ class JobController extends BaseController
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(JobRequest $job)
+    public function destroy($id)
     {
         try {
+
+            // Find the job by ID
+            $job = Job::findOrFail($id);
+
             // Check if the job is assigned to any employee
-            if ($this->repository->findById($job->id)->employees()->count() > 0) {
+            if ($job->employees()->count() > 0) {
                 return response()->json(['message' => 'Job is assigned to an employee.'], 400);
             }
 
@@ -80,13 +104,33 @@ class JobController extends BaseController
             }
 
             // delete the job
-            if ($this->repository->deleteById($job->id)) {
+            if ($job->delete()) {
                 return response()->json(['message' => 'Job deleted successfully']);
             }
 
-            return response()->json(['message' => 'Job deletion failed.'], 500);
+            return response()->json(['message' => 'Job not found.'], 404);
         } catch (\Exception $e) {
-            return response()->json(['message' => 'Job deletion failed.'], 500);
+            return response()->json(['message' => $e->getMessage()], 400);
         }
+    }
+
+    public function createView(Request $request)
+    {
+        return $this->service->createView($request);
+    }
+
+    public function editView($id)
+    {
+        return $this->service->editView($id);
+    }
+
+    public function showView($id)
+    {
+        return $this->service->showView($id);
+    }
+
+    public function deleteView($id)
+    {
+        return $this->service->deleteView($id);
     }
 }

@@ -41,6 +41,10 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::resource('employees', EmployeeController::class);
 
             // Jobs
+            Route::get('jobs/create-view', [JobController::class, 'createView']);
+            Route::get('jobs/edit-view/{id}', [JobController::class, 'editView']);
+            Route::get('jobs/show-view/{id}', [JobController::class, 'showView']);
+            Route::get('jobs/delete-view/{id}', [JobController::class, 'deleteView']);
             Route::resource('jobs', JobController::class);
         });
     });
