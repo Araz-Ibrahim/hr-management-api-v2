@@ -57,6 +57,7 @@ class generateFiles extends Command
         $modelPath = "/{$path}/{$modelName}";
         $controllerPath = "{$modelPath}Controller";
         $repositoryPath = "{$modelPath}Repository";
+        $servicePath = "{$modelPath}Service";
         $requestPath = "{$modelPath}Request";
         $resourcePath = "{$modelPath}Resource";
         $factoryPath = "{$modelPath}Factory";
@@ -101,6 +102,12 @@ class generateFiles extends Command
         // Generate repository class file
         $this->call('make:repository', [
             'name' => $repositoryPath
+        ]);
+
+        // Generate service class file
+        $this->call('make:service', [
+            'name' => $modelName,
+            'path' => $path
         ]);
 
         // Generate factory and seeder class files

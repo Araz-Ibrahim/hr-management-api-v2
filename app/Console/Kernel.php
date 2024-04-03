@@ -8,6 +8,7 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 class Kernel extends ConsoleKernel
 {
     protected $commands = [
+        \App\Console\Commands\MakeService::class,
         \App\Console\Commands\DeleteOldEmployeeLogs::class,
         \App\Console\Commands\ClearLogs::class,
         \App\Console\Commands\InsertEmployees::class,
