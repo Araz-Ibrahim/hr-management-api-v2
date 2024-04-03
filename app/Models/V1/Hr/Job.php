@@ -2,12 +2,13 @@
 
 namespace App\Models\V1\Hr;
 
-use App\Base\BaseModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Job extends BaseModel
+class Job extends Model
 {
+    use HasFactory;
+
     const FK = 'id';
 
     protected $table = 'employee_jobs';

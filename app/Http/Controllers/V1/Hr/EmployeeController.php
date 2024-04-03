@@ -10,6 +10,7 @@ use App\Services\V1\Hr\EmployeeService;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Response;
 
 class EmployeeController extends Controller
@@ -109,6 +110,15 @@ class EmployeeController extends Controller
     public function destroy($id)
     {
         try {
+            // validate the $id
+            $validator = Validator::make(['id' => $id], [
+                'id' => 'required|exists:employees,id',
+            ]);
+
+            if ($validator->fails()) {
+                return response()->json(['message' => 'Invalid employee ID.'], 400);
+            }
+
             // Find the employee by ID
             $employee = Employee::findOrFail($id);
 

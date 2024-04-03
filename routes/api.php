@@ -25,7 +25,9 @@ Route::controller(UserAuthController::class)->group(function () {
 /** ----------- Authenticated Routes ------------ */
 Route::middleware('auth:sanctum')->group(function () {
 
+    // api/v1
     Route::group(['prefix' => 'v1'], function () {
+        // HR
         Route::group(['prefix' => 'hr'], function () {
 
             // Employees

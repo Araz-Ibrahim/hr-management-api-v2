@@ -2,13 +2,15 @@
 
 namespace App\Models\V1\Hr;
 
-use App\Base\BaseModel;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Employee extends BaseModel
+class Employee extends Model
 {
+    use HasFactory;
+
     const FK = 'id';
 
     protected $table = 'employees';

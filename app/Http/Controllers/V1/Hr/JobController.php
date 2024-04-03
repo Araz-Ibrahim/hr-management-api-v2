@@ -8,6 +8,7 @@ use App\Models\V1\Hr\Job;
 use App\Services\V1\Hr\JobService;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class JobController extends Controller
 {
@@ -89,6 +90,15 @@ class JobController extends Controller
     public function destroy($id)
     {
         try {
+
+            // validate the $id
+            $validator = Validator::make(['id' => $id], [
+                'id' => 'required|exists:employee_jobs,id',
+            ]);
+
+            if ($validator->fails()) {
+                return response()->json(['message' => 'Invalid job ID.'], 400);
+            }
 
             // Find the job by ID
             $job = Job::findOrFail($id);
