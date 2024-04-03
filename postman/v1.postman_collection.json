@@ -404,7 +404,7 @@
 										"employees"
 									]
 								},
-								"description": " Renders a view displaying all employee records without pagination."
+								"description": "Renders a view displaying all employee records with pagination."
 							},
 							"response": [
 								{
@@ -440,11 +440,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 12:49:41 GMT"
+											"value": "Wed, 03 Apr 2024 15:11:12 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 12:49:41 GMT"
+											"value": "Wed, 03 Apr 2024 15:11:12 GMT"
 										},
 										{
 											"key": "Connection",
@@ -476,102 +476,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "[\n    [\n        {\n            \"id\": 1,\n            \"name\": \"Founder\",\n            \"email\": \"ebotsford@hill.com\",\n            \"manager_id\": null,\n            \"job_id\": 1,\n            \"salary\": 100000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Elouise Skiles\",\n            \"email\": \"lesley60@conn.com\",\n            \"manager_id\": 1,\n            \"job_id\": 2,\n            \"salary\": 4000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Dr. Jerome Thompson Sr.\",\n            \"email\": \"hermiston.betsy@upton.com\",\n            \"manager_id\": 1,\n            \"job_id\": 2,\n            \"salary\": 8000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Prof. Claire Pollich\",\n            \"email\": \"hirthe.mekhi@hotmail.com\",\n            \"manager_id\": 1,\n            \"job_id\": 2,\n            \"salary\": 5000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Trudie Romaguera\",\n            \"email\": \"clyde24@dach.com\",\n            \"manager_id\": 1,\n            \"job_id\": 2,\n            \"salary\": 7000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Anabelle Barton MD\",\n            \"email\": \"hkovacek@yahoo.com\",\n            \"manager_id\": 2,\n            \"job_id\": 5,\n            \"salary\": 7000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Ewell Cormier III\",\n            \"email\": \"hkeeling@witting.biz\",\n            \"manager_id\": 2,\n            \"job_id\": 4,\n            \"salary\": 8000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Evan Keeling II\",\n            \"email\": \"buster95@gmail.com\",\n            \"manager_id\": 5,\n            \"job_id\": 4,\n            \"salary\": 8000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Clemmie Roob\",\n            \"email\": \"maximillia.sawayn@romaguera.com\",\n            \"manager_id\": null,\n            \"job_id\": 4,\n            \"salary\": 7000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Meggie Stroman\",\n            \"email\": \"ondricka.gay@yahoo.com\",\n            \"manager_id\": 6,\n            \"job_id\": 5,\n            \"salary\": 8000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 12,\n            \"name\": \"Isabelle Mueller\",\n            \"email\": \"brandyn95@gmail.com\",\n            \"manager_id\": null,\n            \"job_id\": 5,\n            \"salary\": 4000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 13,\n            \"name\": \"Amber Little I\",\n            \"email\": \"terrence.zboncak@gmail.com\",\n            \"manager_id\": null,\n            \"job_id\": 4,\n            \"salary\": 4000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 14,\n            \"name\": \"Juwan Lindgren\",\n            \"email\": \"runolfsson.david@walsh.net\",\n            \"manager_id\": 2,\n            \"job_id\": 3,\n            \"salary\": 8000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 15,\n            \"name\": \"Jordyn Barrows DVM\",\n            \"email\": \"devin.hane@white.net\",\n            \"manager_id\": 6,\n            \"job_id\": 5,\n            \"salary\": 7000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 16,\n            \"name\": \"Mrs. Frederique Schaden\",\n            \"email\": \"christy63@yahoo.com\",\n            \"manager_id\": 2,\n            \"job_id\": 4,\n            \"salary\": 4000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 17,\n            \"name\": \"Mr. Dashawn Conroy DDS\",\n            \"email\": \"lgreenholt@hotmail.com\",\n            \"manager_id\": 5,\n            \"job_id\": 4,\n            \"salary\": 8000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 18,\n            \"name\": \"Ms. Clotilde Klocko\",\n            \"email\": \"ziemann.lucie@yahoo.com\",\n            \"manager_id\": 2,\n            \"job_id\": 3,\n            \"salary\": 6000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 19,\n            \"name\": \"Ottilie Mayer\",\n            \"email\": \"zfritsch@gmail.com\",\n            \"manager_id\": 2,\n            \"job_id\": 3,\n            \"salary\": 8000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 20,\n            \"name\": \"Jadon Ankunding III\",\n            \"email\": \"shaina01@stanton.com\",\n            \"manager_id\": 5,\n            \"job_id\": 2,\n            \"salary\": 7000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 21,\n            \"name\": \"Dr. Geovanny Heathcote I\",\n            \"email\": \"pmarvin@luettgen.com\",\n            \"manager_id\": null,\n            \"job_id\": 6,\n            \"salary\": 7000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 22,\n            \"name\": \"Jana Schiller\",\n            \"email\": \"duane.harris@medhurst.info\",\n            \"manager_id\": null,\n            \"job_id\": 6,\n            \"salary\": 8000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 23,\n            \"name\": \"Yasmin Reilly\",\n            \"email\": \"wehner.ardella@yahoo.com\",\n            \"manager_id\": null,\n            \"job_id\": 6,\n            \"salary\": 5000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 24,\n            \"name\": \"Dr. Caitlyn Gorczany Jr.\",\n            \"email\": \"malachi.johnson@hickle.com\",\n            \"manager_id\": 2,\n            \"job_id\": 6,\n            \"salary\": 7000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 25,\n            \"name\": \"Charlie Buckridge\",\n            \"email\": \"blick.filomena@jacobi.com\",\n            \"manager_id\": 3,\n            \"job_id\": 2,\n            \"salary\": 5000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 26,\n            \"name\": \"Miss Celia White PhD\",\n            \"email\": \"lwiza@yahoo.com\",\n            \"manager_id\": 3,\n            \"job_id\": 3,\n            \"salary\": 5000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 27,\n            \"name\": \"Ellsworth Ratke\",\n            \"email\": \"chelsea53@gmail.com\",\n            \"manager_id\": 3,\n            \"job_id\": 6,\n            \"salary\": 4000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 28,\n            \"name\": \"Mrs. Mya Tromp\",\n            \"email\": \"deontae94@gmail.com\",\n            \"manager_id\": 3,\n            \"job_id\": 5,\n            \"salary\": 6000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 29,\n            \"name\": \"Giles Bins\",\n            \"email\": \"kirlin.kristian@yahoo.com\",\n            \"manager_id\": 5,\n            \"job_id\": 2,\n            \"salary\": 8000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 30,\n            \"name\": \"Velda Willms\",\n            \"email\": \"iliana07@gmail.com\",\n            \"manager_id\": 6,\n            \"job_id\": 5,\n            \"salary\": 4000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 31,\n            \"name\": \"Sebastian Haley IV\",\n            \"email\": \"nschulist@klein.biz\",\n            \"manager_id\": null,\n            \"job_id\": 6,\n            \"salary\": 4000,\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 32,\n            \"name\": \"araz ibrahim\",\n            \"email\": \"araz@gmail.com\",\n            \"manager_id\": 3,\n            \"job_id\": 2,\n            \"salary\": 90000,\n            \"created_at\": \"2024-03-30T12:20:34.000000Z\",\n            \"updated_at\": \"2024-03-30T12:20:34.000000Z\"\n        }\n    ]\n]"
-								}
-							]
-						},
-						{
-							"name": "List View",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{url}}/api/v1/hr/employees/list",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"hr",
-										"employees",
-										"list"
-									]
-								},
-								"description": "Renders a paginated view displaying employee records."
-							},
-							"response": [
-								{
-									"name": "List View",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/v1/hr/employees/list",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"v1",
-												"hr",
-												"employees",
-												"list"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 30 Mar 2024 16:41:12 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 30 Mar 2024 16:41:12 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.11"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "10"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "9"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"name\": \"Founder\",\n                \"email\": \"ebotsford@hill.com\",\n                \"manager_id\": null,\n                \"job_id\": 1,\n                \"salary\": 100000,\n                \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n                \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Elouise Skiles\",\n                \"email\": \"lesley60@conn.com\",\n                \"manager_id\": 1,\n                \"job_id\": 2,\n                \"salary\": 4000,\n                \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n                \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Dr. Jerome Thompson Sr.\",\n                \"email\": \"hermiston.betsy@upton.com\",\n                \"manager_id\": 1,\n                \"job_id\": 2,\n                \"salary\": 8000,\n                \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n                \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"Prof. Claire Pollich\",\n                \"email\": \"hirthe.mekhi@hotmail.com\",\n                \"manager_id\": 1,\n                \"job_id\": 2,\n                \"salary\": 5000,\n                \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n                \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n            },\n            {\n                \"id\": 6,\n                \"name\": \"Trudie Romaguera\",\n                \"email\": \"clyde24@dach.com\",\n                \"manager_id\": 1,\n                \"job_id\": 2,\n                \"salary\": 7000,\n                \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n                \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n            },\n            {\n                \"id\": 7,\n                \"name\": \"Anabelle Barton MD\",\n                \"email\": \"hkovacek@yahoo.com\",\n                \"manager_id\": 2,\n                \"job_id\": 5,\n                \"salary\": 7000,\n                \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n                \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n            },\n            {\n                \"id\": 8,\n                \"name\": \"Ewell Cormier III\",\n                \"email\": \"hkeeling@witting.biz\",\n                \"manager_id\": 2,\n                \"job_id\": 4,\n                \"salary\": 8000,\n                \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n                \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n            },\n            {\n                \"id\": 9,\n                \"name\": \"Evan Keeling II\",\n                \"email\": \"buster95@gmail.com\",\n                \"manager_id\": 5,\n                \"job_id\": 4,\n                \"salary\": 8000,\n                \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n                \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n            },\n            {\n                \"id\": 11,\n                \"name\": \"Meggie Stroman\",\n                \"email\": \"ondricka.gay@yahoo.com\",\n                \"manager_id\": 6,\n                \"job_id\": 5,\n                \"salary\": 8000,\n                \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n                \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n            },\n            {\n                \"id\": 12,\n                \"name\": \"Isabelle Mueller\",\n                \"email\": \"brandyn95@gmail.com\",\n                \"manager_id\": null,\n                \"job_id\": 5,\n                \"salary\": 4000,\n                \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n                \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/v1/hr/employees/list?page=1\",\n        \"from\": 1,\n        \"last_page\": 4,\n        \"last_page_url\": \"http://127.0.0.1:8000/api/v1/hr/employees/list?page=4\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/v1/hr/employees/list?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/v1/hr/employees/list?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/v1/hr/employees/list?page=3\",\n                \"label\": \"3\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/v1/hr/employees/list?page=4\",\n                \"label\": \"4\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/v1/hr/employees/list?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": \"http://127.0.0.1:8000/api/v1/hr/employees/list?page=2\",\n        \"path\": \"http://127.0.0.1:8000/api/v1/hr/employees/list\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 10,\n        \"total\": 35\n    }\n}"
+									"body": "{\n    \"message\": \"Employees fetched successfully.\",\n    \"list\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"name\": \"Founder\",\n                \"email\": \"rippin.mariah@hotmail.com\",\n                \"manager_id\": null,\n                \"job_id\": 1,\n                \"salary\": 100000,\n                \"created_at\": \"2024-04-03T15:09:51.000000Z\",\n                \"updated_at\": \"2024-04-03T15:09:51.000000Z\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Jessyca O'Keefe\",\n                \"email\": \"stokes.burnice@yahoo.com\",\n                \"manager_id\": 1,\n                \"job_id\": 5,\n                \"salary\": 5000,\n                \"created_at\": \"2024-04-03T15:09:51.000000Z\",\n                \"updated_at\": \"2024-04-03T15:09:51.000000Z\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Mrs. Joyce O'Reilly\",\n                \"email\": \"mozelle94@gmail.com\",\n                \"manager_id\": 1,\n                \"job_id\": 5,\n                \"salary\": 6000,\n                \"created_at\": \"2024-04-03T15:09:51.000000Z\",\n                \"updated_at\": \"2024-04-03T15:09:51.000000Z\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"Karolann Brown\",\n                \"email\": \"sschimmel@paucek.com\",\n                \"manager_id\": 1,\n                \"job_id\": 5,\n                \"salary\": 5000,\n                \"created_at\": \"2024-04-03T15:09:51.000000Z\",\n                \"updated_at\": \"2024-04-03T15:09:51.000000Z\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"Mrs. Vivien Kirlin I\",\n                \"email\": \"meggie.hirthe@daugherty.com\",\n                \"manager_id\": 1,\n                \"job_id\": 5,\n                \"salary\": 5000,\n                \"created_at\": \"2024-04-03T15:09:51.000000Z\",\n                \"updated_at\": \"2024-04-03T15:09:51.000000Z\"\n            },\n            {\n                \"id\": 6,\n                \"name\": \"Nash Ernser\",\n                \"email\": \"gabernathy@smith.com\",\n                \"manager_id\": 1,\n                \"job_id\": 5,\n                \"salary\": 4000,\n                \"created_at\": \"2024-04-03T15:09:51.000000Z\",\n                \"updated_at\": \"2024-04-03T15:09:51.000000Z\"\n            },\n            {\n                \"id\": 7,\n                \"name\": \"Melissa Schiller\",\n                \"email\": \"barton.shyanne@hotmail.com\",\n                \"manager_id\": 5,\n                \"job_id\": 4,\n                \"salary\": 6000,\n                \"created_at\": \"2024-04-03T15:09:51.000000Z\",\n                \"updated_at\": \"2024-04-03T15:09:51.000000Z\"\n            },\n            {\n                \"id\": 8,\n                \"name\": \"Derrick Ziemann I\",\n                \"email\": \"presley.olson@yahoo.com\",\n                \"manager_id\": 5,\n                \"job_id\": 5,\n                \"salary\": 7000,\n                \"created_at\": \"2024-04-03T15:09:51.000000Z\",\n                \"updated_at\": \"2024-04-03T15:09:51.000000Z\"\n            },\n            {\n                \"id\": 9,\n                \"name\": \"Axel Haag\",\n                \"email\": \"ruth.turner@aufderhar.com\",\n                \"manager_id\": 6,\n                \"job_id\": 6,\n                \"salary\": 6000,\n                \"created_at\": \"2024-04-03T15:09:51.000000Z\",\n                \"updated_at\": \"2024-04-03T15:09:51.000000Z\"\n            },\n            {\n                \"id\": 10,\n                \"name\": \"Karlee Sporer\",\n                \"email\": \"jeanne.keeling@hotmail.com\",\n                \"manager_id\": 2,\n                \"job_id\": 6,\n                \"salary\": 4000,\n                \"created_at\": \"2024-04-03T15:09:51.000000Z\",\n                \"updated_at\": \"2024-04-03T15:09:51.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/v1/hr/employees?page=1\",\n        \"from\": 1,\n        \"last_page\": 4,\n        \"last_page_url\": \"http://127.0.0.1:8000/api/v1/hr/employees?page=4\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/v1/hr/employees?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/v1/hr/employees?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/v1/hr/employees?page=3\",\n                \"label\": \"3\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/v1/hr/employees?page=4\",\n                \"label\": \"4\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/v1/hr/employees?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": \"http://127.0.0.1:8000/api/v1/hr/employees?page=2\",\n        \"path\": \"http://127.0.0.1:8000/api/v1/hr/employees\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 10,\n        \"total\": 31\n    }\n}"
 								}
 							]
 						},
@@ -581,7 +486,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/api/v1/hr/employees/call-function/createview",
+									"raw": "{{url}}/api/v1/hr/employees/create-view",
 									"host": [
 										"{{url}}"
 									],
@@ -590,8 +495,7 @@
 										"v1",
 										"hr",
 										"employees",
-										"call-function",
-										"createview"
+										"create-view"
 									]
 								},
 								"description": "Renders a form for creating a new employee record."
@@ -603,7 +507,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/v1/hr/employees/call-function/createview",
+											"raw": "http://127.0.0.1:8000/api/v1/hr/employees/create-view",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -617,8 +521,7 @@
 												"v1",
 												"hr",
 												"employees",
-												"call-function",
-												"createview"
+												"create-view"
 											]
 										}
 									},
@@ -632,129 +535,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:00:49 GMT"
+											"value": "Wed, 03 Apr 2024 15:11:19 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:00:49 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.11"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "10"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "8"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"message\": \"Employee creation form opened successfully.\",\n    \"employees\": [\n        {\n            \"id\": 1,\n            \"name\": \"Founder\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Elouise Skiles\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Dr. Jerome Thompson Sr.\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Prof. Claire Pollich\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Trudie Romaguera\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Anabelle Barton MD\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Ewell Cormier III\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Evan Keeling II\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Clemmie Roob\"\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Meggie Stroman\"\n        },\n        {\n            \"id\": 12,\n            \"name\": \"Isabelle Mueller\"\n        },\n        {\n            \"id\": 13,\n            \"name\": \"Amber Little I\"\n        },\n        {\n            \"id\": 14,\n            \"name\": \"Juwan Lindgren\"\n        },\n        {\n            \"id\": 15,\n            \"name\": \"Jordyn Barrows DVM\"\n        },\n        {\n            \"id\": 16,\n            \"name\": \"Mrs. Frederique Schaden\"\n        },\n        {\n            \"id\": 17,\n            \"name\": \"Mr. Dashawn Conroy DDS\"\n        },\n        {\n            \"id\": 18,\n            \"name\": \"Ms. Clotilde Klocko\"\n        },\n        {\n            \"id\": 19,\n            \"name\": \"Ottilie Mayer\"\n        },\n        {\n            \"id\": 20,\n            \"name\": \"Jadon Ankunding III\"\n        },\n        {\n            \"id\": 21,\n            \"name\": \"Dr. Geovanny Heathcote I\"\n        },\n        {\n            \"id\": 22,\n            \"name\": \"Jana Schiller\"\n        },\n        {\n            \"id\": 23,\n            \"name\": \"Yasmin Reilly\"\n        },\n        {\n            \"id\": 24,\n            \"name\": \"Dr. Caitlyn Gorczany Jr.\"\n        },\n        {\n            \"id\": 25,\n            \"name\": \"Charlie Buckridge\"\n        },\n        {\n            \"id\": 26,\n            \"name\": \"Miss Celia White PhD\"\n        },\n        {\n            \"id\": 27,\n            \"name\": \"Ellsworth Ratke\"\n        },\n        {\n            \"id\": 28,\n            \"name\": \"Mrs. Mya Tromp\"\n        },\n        {\n            \"id\": 29,\n            \"name\": \"Giles Bins\"\n        },\n        {\n            \"id\": 30,\n            \"name\": \"Velda Willms\"\n        },\n        {\n            \"id\": 31,\n            \"name\": \"Sebastian Haley IV\"\n        },\n        {\n            \"id\": 32,\n            \"name\": \"araz ibrahim\"\n        }\n    ]\n}"
-								}
-							]
-						},
-						{
-							"name": "Show view",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id\": 10\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/api/v1/hr/employees/call-function/showview",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"hr",
-										"employees",
-										"call-function",
-										"showview"
-									]
-								},
-								"description": " Renders a view displaying detailed information about a specific employee record."
-							},
-							"response": [
-								{
-									"name": "Show view",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"id\": 10\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "http://127.0.0.1:8000/api/v1/hr/employees/call-function/showview",
-											"protocol": "http",
-											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
-											],
-											"port": "8000",
-											"path": [
-												"api",
-												"v1",
-												"hr",
-												"employees",
-												"call-function",
-												"showview"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:01:01 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:01:01 GMT"
+											"value": "Wed, 03 Apr 2024 15:11:19 GMT"
 										},
 										{
 											"key": "Connection",
@@ -786,12 +571,12 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"message\": \"Employee details fetched successfully.\",\n    \"employee\": {\n        \"id\": 10,\n        \"name\": \"Clemmie Roob\",\n        \"email\": \"maximillia.sawayn@romaguera.com\",\n        \"manager_id\": null,\n        \"salary\": 7000,\n        \"manager_name\": null,\n        \"job_id\": 4,\n        \"job_title\": \"Buffing and Polishing Operator\"\n    }\n}"
+									"body": "{\n    \"message\": \"Employee creation form opened successfully.\",\n    \"employees\": [\n        {\n            \"id\": 1,\n            \"name\": \"Founder\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Jessyca O'Keefe\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Mrs. Joyce O'Reilly\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Karolann Brown\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Mrs. Vivien Kirlin I\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Nash Ernser\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Melissa Schiller\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Derrick Ziemann I\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Axel Haag\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Karlee Sporer\"\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Rylan Feeney\"\n        },\n        {\n            \"id\": 12,\n            \"name\": \"Maria Wintheiser\"\n        },\n        {\n            \"id\": 13,\n            \"name\": \"Prof. Halie Abernathy Jr.\"\n        },\n        {\n            \"id\": 14,\n            \"name\": \"Macie O'Kon\"\n        },\n        {\n            \"id\": 15,\n            \"name\": \"Ashlynn Abshire\"\n        },\n        {\n            \"id\": 16,\n            \"name\": \"Arvel Heaney\"\n        },\n        {\n            \"id\": 17,\n            \"name\": \"Kasey Breitenberg V\"\n        },\n        {\n            \"id\": 18,\n            \"name\": \"Dr. Dasia Labadie\"\n        },\n        {\n            \"id\": 19,\n            \"name\": \"Maeve Shields\"\n        },\n        {\n            \"id\": 20,\n            \"name\": \"Alta Jacobs\"\n        },\n        {\n            \"id\": 21,\n            \"name\": \"Joana Skiles\"\n        },\n        {\n            \"id\": 22,\n            \"name\": \"Dr. Isai Becker IV\"\n        },\n        {\n            \"id\": 23,\n            \"name\": \"Bertram Kihn Sr.\"\n        },\n        {\n            \"id\": 24,\n            \"name\": \"Katelyn Ryan\"\n        },\n        {\n            \"id\": 25,\n            \"name\": \"Baby Weber\"\n        },\n        {\n            \"id\": 26,\n            \"name\": \"Raina Murphy I\"\n        },\n        {\n            \"id\": 27,\n            \"name\": \"Dr. Arvel Adams\"\n        },\n        {\n            \"id\": 28,\n            \"name\": \"Lloyd Thiel\"\n        },\n        {\n            \"id\": 29,\n            \"name\": \"Prof. Paula Gusikowski IV\"\n        },\n        {\n            \"id\": 30,\n            \"name\": \"Prof. Rosanna Blanda III\"\n        },\n        {\n            \"id\": 31,\n            \"name\": \"Alfonzo Fritsch\"\n        }\n    ]\n}"
 								}
 							]
 						},
 						{
-							"name": "Update View",
+							"name": "Show view",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -800,7 +585,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\": 5\r\n}",
+									"raw": "",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -808,7 +593,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/api/v1/hr/employees/call-function/editview",
+									"raw": "{{url}}/api/v1/hr/employees/show-view/1",
 									"host": [
 										"{{url}}"
 									],
@@ -817,21 +602,21 @@
 										"v1",
 										"hr",
 										"employees",
-										"call-function",
-										"editview"
+										"show-view",
+										"1"
 									]
 								},
-								"description": "Renders a form for updating an existing employee record."
+								"description": " Renders a view displaying detailed information about a specific employee record."
 							},
 							"response": [
 								{
-									"name": "Update View",
+									"name": "Show view",
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"id\": 5\r\n}",
+											"raw": "",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -839,7 +624,7 @@
 											}
 										},
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/v1/hr/employees/call-function/editview",
+											"raw": "http://127.0.0.1:8000/api/v1/hr/employees/show-view/1",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -853,8 +638,8 @@
 												"v1",
 												"hr",
 												"employees",
-												"call-function",
-												"editview"
+												"show-view",
+												"1"
 											]
 										}
 									},
@@ -868,11 +653,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:01:09 GMT"
+											"value": "Wed, 03 Apr 2024 15:11:32 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:01:09 GMT"
+											"value": "Wed, 03 Apr 2024 15:11:32 GMT"
 										},
 										{
 											"key": "Connection",
@@ -904,12 +689,12 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"message\": \"Employee edit form opened successfully.\",\n    \"currentEmployee\": {\n        \"id\": 5,\n        \"name\": \"Prof. Claire Pollich\",\n        \"email\": \"hirthe.mekhi@hotmail.com\",\n        \"manager_id\": 1,\n        \"salary\": 5000,\n        \"manager_name\": \"Founder\",\n        \"job_id\": 2,\n        \"job_title\": \"Gas Pumping Station Operator\"\n    },\n    \"employees\": [\n        {\n            \"id\": 1,\n            \"name\": \"Founder\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Elouise Skiles\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Dr. Jerome Thompson Sr.\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Trudie Romaguera\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Anabelle Barton MD\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Ewell Cormier III\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Evan Keeling II\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Clemmie Roob\"\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Meggie Stroman\"\n        },\n        {\n            \"id\": 12,\n            \"name\": \"Isabelle Mueller\"\n        },\n        {\n            \"id\": 13,\n            \"name\": \"Amber Little I\"\n        },\n        {\n            \"id\": 14,\n            \"name\": \"Juwan Lindgren\"\n        },\n        {\n            \"id\": 15,\n            \"name\": \"Jordyn Barrows DVM\"\n        },\n        {\n            \"id\": 16,\n            \"name\": \"Mrs. Frederique Schaden\"\n        },\n        {\n            \"id\": 17,\n            \"name\": \"Mr. Dashawn Conroy DDS\"\n        },\n        {\n            \"id\": 18,\n            \"name\": \"Ms. Clotilde Klocko\"\n        },\n        {\n            \"id\": 19,\n            \"name\": \"Ottilie Mayer\"\n        },\n        {\n            \"id\": 20,\n            \"name\": \"Jadon Ankunding III\"\n        },\n        {\n            \"id\": 21,\n            \"name\": \"Dr. Geovanny Heathcote I\"\n        },\n        {\n            \"id\": 22,\n            \"name\": \"Jana Schiller\"\n        },\n        {\n            \"id\": 23,\n            \"name\": \"Yasmin Reilly\"\n        },\n        {\n            \"id\": 24,\n            \"name\": \"Dr. Caitlyn Gorczany Jr.\"\n        },\n        {\n            \"id\": 25,\n            \"name\": \"Charlie Buckridge\"\n        },\n        {\n            \"id\": 26,\n            \"name\": \"Miss Celia White PhD\"\n        },\n        {\n            \"id\": 27,\n            \"name\": \"Ellsworth Ratke\"\n        },\n        {\n            \"id\": 28,\n            \"name\": \"Mrs. Mya Tromp\"\n        },\n        {\n            \"id\": 29,\n            \"name\": \"Giles Bins\"\n        },\n        {\n            \"id\": 30,\n            \"name\": \"Velda Willms\"\n        },\n        {\n            \"id\": 31,\n            \"name\": \"Sebastian Haley IV\"\n        },\n        {\n            \"id\": 32,\n            \"name\": \"araz ibrahim\"\n        }\n    ]\n}"
+									"body": "{\n    \"message\": \"Employee details fetched successfully.\",\n    \"employee\": {\n        \"id\": 1,\n        \"name\": \"Founder\",\n        \"email\": \"rippin.mariah@hotmail.com\",\n        \"manager_id\": null,\n        \"salary\": 100000,\n        \"manager_name\": null,\n        \"job_id\": 1,\n        \"job_title\": \"Founder\"\n    }\n}"
 								}
 							]
 						},
 						{
-							"name": "Delete View",
+							"name": "Update View",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -918,7 +703,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\": 5\r\n}",
+									"raw": "",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -926,7 +711,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/api/v1/hr/employees/call-function/deleteview",
+									"raw": "{{url}}/api/v1/hr/employees/edit-view/10",
 									"host": [
 										"{{url}}"
 									],
@@ -935,21 +720,21 @@
 										"v1",
 										"hr",
 										"employees",
-										"call-function",
-										"deleteview"
+										"edit-view",
+										"10"
 									]
 								},
-								"description": "Renders a confirmation form for deleting an existing employee record."
+								"description": "Renders a form for updating an existing employee record."
 							},
 							"response": [
 								{
-									"name": "Delete View",
+									"name": "Update View",
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"id\": 5\r\n}",
+											"raw": "",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -957,7 +742,7 @@
 											}
 										},
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/v1/hr/employees/call-function/deleteview",
+											"raw": "http://127.0.0.1:8000/api/v1/hr/employees/edit-view/10",
 											"protocol": "http",
 											"host": [
 												"127",
@@ -971,8 +756,8 @@
 												"v1",
 												"hr",
 												"employees",
-												"call-function",
-												"deleteview"
+												"edit-view",
+												"10"
 											]
 										}
 									},
@@ -986,11 +771,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:01:15 GMT"
+											"value": "Wed, 03 Apr 2024 15:11:41 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:01:15 GMT"
+											"value": "Wed, 03 Apr 2024 15:11:41 GMT"
 										},
 										{
 											"key": "Connection",
@@ -1022,7 +807,125 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"message\": \"Employee deleted action opened successfully.\",\n    \"employee\": {\n        \"id\": 5,\n        \"name\": \"Prof. Claire Pollich\",\n        \"email\": \"hirthe.mekhi@hotmail.com\",\n        \"manager_id\": 1,\n        \"job_id\": 2,\n        \"salary\": 5000,\n        \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n        \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n    }\n}"
+									"body": "{\n    \"message\": \"Employee edit form opened successfully.\",\n    \"currentEmployee\": {\n        \"id\": 10,\n        \"name\": \"Karlee Sporer\",\n        \"email\": \"jeanne.keeling@hotmail.com\",\n        \"manager_id\": 2,\n        \"salary\": 4000,\n        \"manager_name\": \"Jessyca O'Keefe\",\n        \"job_id\": 6,\n        \"job_title\": \"Welding Machine Operator\"\n    },\n    \"employees\": [\n        {\n            \"id\": 1,\n            \"name\": \"Founder\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Jessyca O'Keefe\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Mrs. Joyce O'Reilly\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Karolann Brown\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Mrs. Vivien Kirlin I\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Nash Ernser\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Melissa Schiller\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Derrick Ziemann I\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Axel Haag\"\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Rylan Feeney\"\n        },\n        {\n            \"id\": 12,\n            \"name\": \"Maria Wintheiser\"\n        },\n        {\n            \"id\": 13,\n            \"name\": \"Prof. Halie Abernathy Jr.\"\n        },\n        {\n            \"id\": 14,\n            \"name\": \"Macie O'Kon\"\n        },\n        {\n            \"id\": 15,\n            \"name\": \"Ashlynn Abshire\"\n        },\n        {\n            \"id\": 16,\n            \"name\": \"Arvel Heaney\"\n        },\n        {\n            \"id\": 17,\n            \"name\": \"Kasey Breitenberg V\"\n        },\n        {\n            \"id\": 18,\n            \"name\": \"Dr. Dasia Labadie\"\n        },\n        {\n            \"id\": 19,\n            \"name\": \"Maeve Shields\"\n        },\n        {\n            \"id\": 20,\n            \"name\": \"Alta Jacobs\"\n        },\n        {\n            \"id\": 21,\n            \"name\": \"Joana Skiles\"\n        },\n        {\n            \"id\": 22,\n            \"name\": \"Dr. Isai Becker IV\"\n        },\n        {\n            \"id\": 23,\n            \"name\": \"Bertram Kihn Sr.\"\n        },\n        {\n            \"id\": 24,\n            \"name\": \"Katelyn Ryan\"\n        },\n        {\n            \"id\": 25,\n            \"name\": \"Baby Weber\"\n        },\n        {\n            \"id\": 26,\n            \"name\": \"Raina Murphy I\"\n        },\n        {\n            \"id\": 27,\n            \"name\": \"Dr. Arvel Adams\"\n        },\n        {\n            \"id\": 28,\n            \"name\": \"Lloyd Thiel\"\n        },\n        {\n            \"id\": 29,\n            \"name\": \"Prof. Paula Gusikowski IV\"\n        },\n        {\n            \"id\": 30,\n            \"name\": \"Prof. Rosanna Blanda III\"\n        },\n        {\n            \"id\": 31,\n            \"name\": \"Alfonzo Fritsch\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete View",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/hr/employees/delete-view/10",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"hr",
+										"employees",
+										"delete-view",
+										"10"
+									]
+								},
+								"description": "Renders a confirmation form for deleting an existing employee record."
+							},
+							"response": [
+								{
+									"name": "Delete View",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/v1/hr/employees/delete-view/10",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"v1",
+												"hr",
+												"employees",
+												"delete-view",
+												"10"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Apr 2024 15:11:47 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Apr 2024 15:11:47 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.11"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "4"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Employee deleted action opened successfully.\",\n    \"employee\": {\n        \"id\": 10,\n        \"name\": \"Karlee Sporer\",\n        \"email\": \"jeanne.keeling@hotmail.com\",\n        \"manager_id\": 2,\n        \"job_id\": 6,\n        \"salary\": 4000,\n        \"created_at\": \"2024-04-03T15:09:51.000000Z\",\n        \"updated_at\": \"2024-04-03T15:09:51.000000Z\"\n    }\n}"
 								}
 							]
 						}
@@ -1068,7 +971,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"name\": \"araz ibrahim\",\r\n    \"email\": \"new@gmail.com\",\r\n    \"manager_id\": 3,\r\n    \"job_id\": 2,\r\n    \"salary\": 90000\r\n}",
+											"raw": "{\r\n    \"name\": \"araz ibrahim\",\r\n    \"email\": \"araz@gmail.com\",\r\n    \"manager_id\": 3,\r\n    \"job_id\": 2,\r\n    \"salary\": 90000\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1076,15 +979,10 @@
 											}
 										},
 										"url": {
-											"raw": "http://127.0.0.1:8000/api/v1/hr/employees",
-											"protocol": "http",
+											"raw": "{{url}}/api/v1/hr/employees",
 											"host": [
-												"127",
-												"0",
-												"0",
-												"1"
+												"{{url}}"
 											],
-											"port": "8000",
 											"path": [
 												"api",
 												"v1",
@@ -1103,11 +1001,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:12:16 GMT"
+											"value": "Wed, 03 Apr 2024 15:12:00 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:12:16 GMT"
+											"value": "Wed, 03 Apr 2024 15:12:00 GMT"
 										},
 										{
 											"key": "Connection",
@@ -1131,7 +1029,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "7"
+											"value": "9"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -1158,7 +1056,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/api/v1/hr/employees/10",
+									"raw": "{{url}}/api/v1/hr/employees/12",
 									"host": [
 										"{{url}}"
 									],
@@ -1167,7 +1065,7 @@
 										"v1",
 										"hr",
 										"employees",
-										"10"
+										"12"
 									]
 								},
 								"description": " Updates the details of a specific employee record in the database."
@@ -1257,7 +1155,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/api/v1/hr/employees/10",
+									"raw": "{{url}}/api/v1/hr/employees/9",
 									"host": [
 										"{{url}}"
 									],
@@ -1266,7 +1164,7 @@
 										"v1",
 										"hr",
 										"employees",
-										"10"
+										"9"
 									]
 								},
 								"description": "Deletes a specific employee record from the database."
@@ -1278,10 +1176,15 @@
 										"method": "DELETE",
 										"header": [],
 										"url": {
-											"raw": "{{url}}/api/v1/hr/employees/10",
+											"raw": "http://127.0.0.1:8000/api/v1/hr/employees/10",
+											"protocol": "http",
 											"host": [
-												"{{url}}"
+												"127",
+												"0",
+												"0",
+												"1"
 											],
+											"port": "8000",
 											"path": [
 												"api",
 												"v1",
@@ -1351,7 +1254,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\": 2\r\n}",
+									"raw": "{\r\n    \"id\": 20\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1359,7 +1262,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/api/v1/hr/employees/call-function/findManagers",
+									"raw": "{{url}}/api/v1/hr/employees/find-managers",
 									"host": [
 										"{{url}}"
 									],
@@ -1368,8 +1271,7 @@
 										"v1",
 										"hr",
 										"employees",
-										"call-function",
-										"findManagers"
+										"find-managers"
 									]
 								},
 								"description": "Retrieves the chain of managers for a specific employee up to the founder."
@@ -1382,7 +1284,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"id\": 2\r\n}",
+											"raw": "{\r\n    \"id\": 20\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1390,7 +1292,7 @@
 											}
 										},
 										"url": {
-											"raw": "{{url}}/api/v1/hr/employees/call-function/findManagers",
+											"raw": "{{url}}/api/v1/hr/employees/find-managers",
 											"host": [
 												"{{url}}"
 											],
@@ -1399,8 +1301,7 @@
 												"v1",
 												"hr",
 												"employees",
-												"call-function",
-												"findManagers"
+												"find-managers"
 											]
 										}
 									},
@@ -1414,11 +1315,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:13:31 GMT"
+											"value": "Wed, 03 Apr 2024 15:12:53 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:13:31 GMT"
+											"value": "Wed, 03 Apr 2024 15:12:53 GMT"
 										},
 										{
 											"key": "Connection",
@@ -1442,7 +1343,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "7"
+											"value": "8"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -1450,7 +1351,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"message\": \"Managers up to the founder fetched successfully.\",\n    \"managers\": [\n        \"Founder\",\n        \"Elouise Skiles\"\n    ]\n}"
+									"body": "{\n    \"message\": \"Managers up to the founder fetched successfully.\",\n    \"managers\": [\n        \"Founder\",\n        \"Mrs. Joyce O'Reilly\",\n        \"Alta Jacobs\"\n    ]\n}"
 								}
 							]
 						},
@@ -1472,7 +1373,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/api/v1/hr/employees/call-function/findManagersWithSalaries",
+									"raw": "{{url}}/api/v1/hr/employees/find-managers-with-salaries",
 									"host": [
 										"{{url}}"
 									],
@@ -1481,8 +1382,7 @@
 										"v1",
 										"hr",
 										"employees",
-										"call-function",
-										"findManagersWithSalaries"
+										"find-managers-with-salaries"
 									]
 								},
 								"description": "Retrieves the chain of managers for a specific employee up to the founder, including salary information."
@@ -1503,7 +1403,7 @@
 											}
 										},
 										"url": {
-											"raw": "{{url}}/api/v1/hr/employees/call-function/findManagersWithSalaries",
+											"raw": "{{url}}/api/v1/hr/employees/find-managers-with-salaries",
 											"host": [
 												"{{url}}"
 											],
@@ -1512,8 +1412,7 @@
 												"v1",
 												"hr",
 												"employees",
-												"call-function",
-												"findManagersWithSalaries"
+												"find-managers-with-salaries"
 											]
 										}
 									},
@@ -1527,11 +1426,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:17:50 GMT"
+											"value": "Wed, 03 Apr 2024 15:13:01 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:17:50 GMT"
+											"value": "Wed, 03 Apr 2024 15:13:01 GMT"
 										},
 										{
 											"key": "Connection",
@@ -1555,7 +1454,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "7"
+											"value": "9"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -1563,7 +1462,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"message\": \"Managers with salaries up to the founder fetched successfully.\",\n    \"managers_with_salaries\": {\n        \"Founder\": 100000,\n        \"Trudie Romaguera\": 7000,\n        \"Meggie Stroman\": 8000\n    }\n}"
+									"body": "{\n    \"message\": \"Managers with salaries up to the founder fetched successfully.\",\n    \"managers_with_salaries\": {\n        \"Founder\": 100000,\n        \"Mrs. Joyce O'Reilly\": 6000,\n        \"Rylan Feeney\": 8000\n    }\n}"
 								}
 							]
 						},
@@ -1585,7 +1484,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/api/v1/hr/employees/call-function/searchEmployees",
+									"raw": "{{url}}/api/v1/hr/employees/search",
 									"host": [
 										"{{url}}"
 									],
@@ -1594,8 +1493,7 @@
 										"v1",
 										"hr",
 										"employees",
-										"call-function",
-										"searchEmployees"
+										"search"
 									]
 								},
 								"description": "Searches for employees by their name or salary."
@@ -1616,7 +1514,7 @@
 											}
 										},
 										"url": {
-											"raw": "{{url}}/api/v1/hr/employees/call-function/searchEmployees",
+											"raw": "{{url}}/api/v1/hr/employees/search",
 											"host": [
 												"{{url}}"
 											],
@@ -1625,8 +1523,7 @@
 												"v1",
 												"hr",
 												"employees",
-												"call-function",
-												"searchEmployees"
+												"search"
 											]
 										}
 									},
@@ -1640,11 +1537,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:18:16 GMT"
+											"value": "Wed, 03 Apr 2024 15:13:12 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:18:16 GMT"
+											"value": "Wed, 03 Apr 2024 15:13:12 GMT"
 										},
 										{
 											"key": "Connection",
@@ -1668,7 +1565,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "5"
+											"value": "8"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -1676,7 +1573,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"message\": \"Employees fetched successfully.\",\n    \"employees\": [\n        {\n            \"id\": 16,\n            \"name\": \"Mrs. Frederique Schaden\",\n            \"email\": \"christy63@yahoo.com\",\n            \"salary\": 4000,\n            \"manager_name\": \"Elouise Skiles\",\n            \"job_title\": \"Buffing and Polishing Operator\"\n        },\n        {\n            \"id\": 17,\n            \"name\": \"Mr. Dashawn Conroy DDS\",\n            \"email\": \"lgreenholt@hotmail.com\",\n            \"salary\": 8000,\n            \"manager_name\": \"Prof. Claire Pollich\",\n            \"job_title\": \"Buffing and Polishing Operator\"\n        },\n        {\n            \"id\": 28,\n            \"name\": \"Mrs. Mya Tromp\",\n            \"email\": \"deontae94@gmail.com\",\n            \"salary\": 6000,\n            \"manager_name\": \"Dr. Jerome Thompson Sr.\",\n            \"job_title\": \"Industrial Engineer\"\n        }\n    ]\n}"
+									"body": "{\n    \"message\": \"Employees fetched successfully.\",\n    \"employees\": [\n        {\n            \"id\": 3,\n            \"name\": \"Mrs. Joyce O'Reilly\",\n            \"email\": \"mozelle94@gmail.com\",\n            \"salary\": 6000,\n            \"manager_name\": \"Founder\",\n            \"job_title\": \"Mechanical Engineer\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Mrs. Vivien Kirlin I\",\n            \"email\": \"meggie.hirthe@daugherty.com\",\n            \"salary\": 5000,\n            \"manager_name\": \"Founder\",\n            \"job_title\": \"Mechanical Engineer\"\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -1686,7 +1583,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/api/v1/hr/employees/call-function/exportEmployeesCsv",
+									"raw": "{{url}}/api/v1/hr/employees/export-csv",
 									"host": [
 										"{{url}}"
 									],
@@ -1695,8 +1592,7 @@
 										"v1",
 										"hr",
 										"employees",
-										"call-function",
-										"exportEmployeesCsv"
+										"export-csv"
 									]
 								},
 								"description": " Exports all employee records to a CSV file and downloaded."
@@ -1708,7 +1604,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{url}}/api/v1/hr/employees/call-function/exportEmployeesCsv",
+											"raw": "{{url}}/api/v1/hr/employees/export-csv",
 											"host": [
 												"{{url}}"
 											],
@@ -1717,8 +1613,7 @@
 												"v1",
 												"hr",
 												"employees",
-												"call-function",
-												"exportEmployeesCsv"
+												"export-csv"
 											]
 										}
 									},
@@ -1732,11 +1627,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:19:32 GMT"
+											"value": "Wed, 03 Apr 2024 15:13:19 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:19:32 GMT"
+											"value": "Wed, 03 Apr 2024 15:13:19 GMT"
 										},
 										{
 											"key": "Connection",
@@ -1764,7 +1659,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "9"
+											"value": "7"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -1772,7 +1667,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "ID,Name,Email,Manager,Job,Salary\n1,Founder,ebotsford@hill.com,N/A,Founder,100000\n2,\"Elouise Skiles\",lesley60@conn.com,Founder,\"Gas Pumping Station Operator\",4000\n3,\"Dr. Jerome Thompson Sr.\",hermiston.betsy@upton.com,Founder,\"Gas Pumping Station Operator\",8000\n5,\"Prof. Claire Pollich\",hirthe.mekhi@hotmail.com,Founder,\"Gas Pumping Station Operator\",5000\n6,\"Trudie Romaguera\",clyde24@dach.com,Founder,\"Gas Pumping Station Operator\",7000\n7,\"Anabelle Barton MD\",hkovacek@yahoo.com,\"Elouise Skiles\",\"Industrial Engineer\",7000\n8,\"Ewell Cormier III\",hkeeling@witting.biz,\"Elouise Skiles\",\"Buffing and Polishing Operator\",8000\n9,\"Evan Keeling II\",buster95@gmail.com,\"Prof. Claire Pollich\",\"Buffing and Polishing Operator\",8000\n11,\"Meggie Stroman\",ondricka.gay@yahoo.com,\"Trudie Romaguera\",\"Industrial Engineer\",8000\n12,\"Isabelle Mueller\",brandyn95@gmail.com,N/A,\"Industrial Engineer\",4000\n13,\"Amber Little I\",terrence.zboncak@gmail.com,N/A,\"Buffing and Polishing Operator\",4000\n14,\"Juwan Lindgren\",runolfsson.david@walsh.net,\"Elouise Skiles\",\"Forensic Science Technician\",8000\n15,\"Jordyn Barrows DVM\",devin.hane@white.net,\"Trudie Romaguera\",\"Industrial Engineer\",7000\n16,\"Mrs. Frederique Schaden\",christy63@yahoo.com,\"Elouise Skiles\",\"Buffing and Polishing Operator\",4000\n17,\"Mr. Dashawn Conroy DDS\",lgreenholt@hotmail.com,\"Prof. Claire Pollich\",\"Buffing and Polishing Operator\",8000\n18,\"Ms. Clotilde Klocko\",ziemann.lucie@yahoo.com,\"Elouise Skiles\",\"Forensic Science Technician\",6000\n19,\"Ottilie Mayer\",zfritsch@gmail.com,\"Elouise Skiles\",\"Forensic Science Technician\",8000\n20,\"Jadon Ankunding III\",shaina01@stanton.com,\"Prof. Claire Pollich\",\"Gas Pumping Station Operator\",7000\n21,\"Dr. Geovanny Heathcote I\",pmarvin@luettgen.com,N/A,Actuary,7000\n22,\"Jana Schiller\",duane.harris@medhurst.info,N/A,Actuary,8000\n23,\"Yasmin Reilly\",wehner.ardella@yahoo.com,N/A,Actuary,5000\n24,\"Dr. Caitlyn Gorczany Jr.\",malachi.johnson@hickle.com,\"Elouise Skiles\",Actuary,7000\n25,\"Charlie Buckridge\",blick.filomena@jacobi.com,\"Dr. Jerome Thompson Sr.\",\"Gas Pumping Station Operator\",5000\n26,\"Miss Celia White PhD\",lwiza@yahoo.com,\"Dr. Jerome Thompson Sr.\",\"Forensic Science Technician\",5000\n27,\"Ellsworth Ratke\",chelsea53@gmail.com,\"Dr. Jerome Thompson Sr.\",Actuary,4000\n28,\"Mrs. Mya Tromp\",deontae94@gmail.com,\"Dr. Jerome Thompson Sr.\",\"Industrial Engineer\",6000\n29,\"Giles Bins\",kirlin.kristian@yahoo.com,\"Prof. Claire Pollich\",\"Gas Pumping Station Operator\",8000\n30,\"Velda Willms\",iliana07@gmail.com,\"Trudie Romaguera\",\"Industrial Engineer\",4000\n31,\"Sebastian Haley IV\",nschulist@klein.biz,N/A,Actuary,4000\n32,\"araz ibrahim\",araz@gmail.com,\"Dr. Jerome Thompson Sr.\",\"Gas Pumping Station Operator\",90000\n33,\"araz ibrahim\",new@gmail.com,\"Dr. Jerome Thompson Sr.\",\"Gas Pumping Station Operator\",90000\n"
+									"body": "ID,Name,Email,Manager,Job,Salary\n1,Founder,rippin.mariah@hotmail.com,N/A,Founder,100000\n2,\"Jessyca O'Keefe\",stokes.burnice@yahoo.com,Founder,\"Mechanical Engineer\",5000\n3,\"Mrs. Joyce O'Reilly\",mozelle94@gmail.com,Founder,\"Mechanical Engineer\",6000\n4,\"Karolann Brown\",sschimmel@paucek.com,Founder,\"Mechanical Engineer\",5000\n5,\"Mrs. Vivien Kirlin I\",meggie.hirthe@daugherty.com,Founder,\"Mechanical Engineer\",5000\n6,\"Nash Ernser\",gabernathy@smith.com,Founder,\"Mechanical Engineer\",4000\n7,\"Melissa Schiller\",barton.shyanne@hotmail.com,\"Mrs. Vivien Kirlin I\",\"Pharmacy Technician\",6000\n8,\"Derrick Ziemann I\",presley.olson@yahoo.com,\"Mrs. Vivien Kirlin I\",\"Mechanical Engineer\",7000\n9,\"Axel Haag\",ruth.turner@aufderhar.com,\"Nash Ernser\",\"Welding Machine Operator\",6000\n10,\"Karlee Sporer\",jeanne.keeling@hotmail.com,\"Jessyca O'Keefe\",\"Welding Machine Operator\",4000\n11,\"Rylan Feeney\",francisca21@gaylord.com,\"Mrs. Joyce O'Reilly\",\"Pharmacy Technician\",8000\n12,\"Maria Wintheiser\",eleanora30@gmail.com,\"Mrs. Joyce O'Reilly\",\"Welding Machine Operator\",6000\n13,\"Prof. Halie Abernathy Jr.\",delfina.howe@yahoo.com,\"Jessyca O'Keefe\",\"Mechanical Engineer\",4000\n14,\"Macie O'Kon\",nlehner@hotmail.com,\"Mrs. Vivien Kirlin I\",\"Welding Machine Operator\",4000\n15,\"Ashlynn Abshire\",ignatius04@yahoo.com,\"Mrs. Vivien Kirlin I\",\"Welding Machine Operator\",7000\n16,\"Arvel Heaney\",ystreich@mcglynn.com,\"Karolann Brown\",Heaters,7000\n17,\"Kasey Breitenberg V\",rspencer@gmail.com,\"Mrs. Vivien Kirlin I\",\"Mechanical Engineer\",4000\n18,\"Dr. Dasia Labadie\",fadel.amiya@parker.info,\"Nash Ernser\",Psychiatrist,7000\n19,\"Maeve Shields\",conn.rhea@marks.org,\"Nash Ernser\",\"Welding Machine Operator\",6000\n20,\"Alta Jacobs\",hilpert.everett@raynor.com,\"Mrs. Joyce O'Reilly\",\"Pharmacy Technician\",5000\n21,\"Joana Skiles\",geovanny.renner@yahoo.com,\"Mrs. Joyce O'Reilly\",\"Mechanical Engineer\",6000\n22,\"Dr. Isai Becker IV\",yvette.gerhold@goyette.com,\"Nash Ernser\",\"Mechanical Engineer\",6000\n23,\"Bertram Kihn Sr.\",agustin.hudson@yahoo.com,\"Jessyca O'Keefe\",\"Mechanical Engineer\",7000\n24,\"Katelyn Ryan\",eli.krajcik@gmail.com,\"Nash Ernser\",\"Mechanical Engineer\",5000\n25,\"Baby Weber\",kherman@carter.info,\"Jessyca O'Keefe\",\"Pharmacy Technician\",6000\n26,\"Raina Murphy I\",xdare@will.com,\"Mrs. Vivien Kirlin I\",Heaters,4000\n27,\"Dr. Arvel Adams\",nicholaus15@gmail.com,\"Mrs. Vivien Kirlin I\",Heaters,8000\n28,\"Lloyd Thiel\",abshire.kamron@cummings.com,\"Karolann Brown\",Psychiatrist,5000\n29,\"Prof. Paula Gusikowski IV\",zaria73@gmail.com,\"Jessyca O'Keefe\",Heaters,6000\n30,\"Prof. Rosanna Blanda III\",raoul38@leffler.com,\"Mrs. Vivien Kirlin I\",Heaters,6000\n31,\"Alfonzo Fritsch\",kaya48@schoen.info,\"Mrs. Vivien Kirlin I\",\"Welding Machine Operator\",7000\n32,\"araz ibrahim\",araz@gmail.com,\"Mrs. Joyce O'Reilly\",Psychiatrist,90000\n"
 								}
 							]
 						},
@@ -1792,7 +1687,7 @@
 									]
 								},
 								"url": {
-									"raw": "{{url}}/api/v1/hr/employees/call-function/importEmployeesCsv",
+									"raw": "{{url}}/api/v1/hr/employees/import-csv",
 									"host": [
 										"{{url}}"
 									],
@@ -1801,8 +1696,7 @@
 										"v1",
 										"hr",
 										"employees",
-										"call-function",
-										"importEmployeesCsv"
+										"import-csv"
 									]
 								},
 								"description": " Imports employee records from a CSV file into the database."
@@ -1824,7 +1718,7 @@
 											]
 										},
 										"url": {
-											"raw": "{{url}}/api/v1/hr/employees/call-function/importEmployeesCsv",
+											"raw": "{{url}}/api/v1/hr/employees/import-csv",
 											"host": [
 												"{{url}}"
 											],
@@ -1833,8 +1727,7 @@
 												"v1",
 												"hr",
 												"employees",
-												"call-function",
-												"importEmployeesCsv"
+												"import-csv"
 											]
 										}
 									},
@@ -1848,11 +1741,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:19:55 GMT"
+											"value": "Wed, 03 Apr 2024 15:13:26 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:19:55 GMT"
+											"value": "Wed, 03 Apr 2024 15:13:26 GMT"
 										},
 										{
 											"key": "Connection",
@@ -1876,7 +1769,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "7"
+											"value": "6"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -1917,7 +1810,7 @@
 										"jobs"
 									]
 								},
-								"description": " Renders a view displaying all job records without pagination."
+								"description": "Renders a view displaying all job records with pagination."
 							},
 							"response": [
 								{
@@ -1926,10 +1819,15 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{url}}/api/v1/hr/jobs",
+											"raw": "http://127.0.0.1:8000/api/v1/hr/jobs",
+											"protocol": "http",
 											"host": [
-												"{{url}}"
+												"127",
+												"0",
+												"0",
+												"1"
 											],
+											"port": "8000",
 											"path": [
 												"api",
 												"v1",
@@ -1948,11 +1846,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 12:46:32 GMT"
+											"value": "Wed, 03 Apr 2024 15:14:18 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 12:46:32 GMT"
+											"value": "Wed, 03 Apr 2024 15:14:18 GMT"
 										},
 										{
 											"key": "Connection",
@@ -1984,17 +1882,17 @@
 										}
 									],
 									"cookie": [],
-									"body": "[\n    [\n        {\n            \"id\": 1,\n            \"title\": \"Founder\",\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"title\": \"Gas Pumping Station Operator\",\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"title\": \"Forensic Science Technician\",\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"title\": \"Buffing and Polishing Operator\",\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"title\": \"Industrial Engineer\",\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"title\": \"Actuary\",\n            \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n            \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n        }\n    ]\n]"
+									"body": "{\n    \"message\": \"Jobs fetched successfully.\",\n    \"list\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"title\": \"Founder\",\n                \"created_at\": \"2024-04-03T15:09:51.000000Z\",\n                \"updated_at\": \"2024-04-03T15:09:51.000000Z\"\n            },\n            {\n                \"id\": 2,\n                \"title\": \"Psychiatrist\",\n                \"created_at\": \"2024-04-03T15:09:51.000000Z\",\n                \"updated_at\": \"2024-04-03T15:09:51.000000Z\"\n            },\n            {\n                \"id\": 3,\n                \"title\": \"Heaters\",\n                \"created_at\": \"2024-04-03T15:09:51.000000Z\",\n                \"updated_at\": \"2024-04-03T15:09:51.000000Z\"\n            },\n            {\n                \"id\": 4,\n                \"title\": \"Pharmacy Technician\",\n                \"created_at\": \"2024-04-03T15:09:51.000000Z\",\n                \"updated_at\": \"2024-04-03T15:09:51.000000Z\"\n            },\n            {\n                \"id\": 5,\n                \"title\": \"Mechanical Engineer\",\n                \"created_at\": \"2024-04-03T15:09:51.000000Z\",\n                \"updated_at\": \"2024-04-03T15:09:51.000000Z\"\n            },\n            {\n                \"id\": 6,\n                \"title\": \"Welding Machine Operator\",\n                \"created_at\": \"2024-04-03T15:09:51.000000Z\",\n                \"updated_at\": \"2024-04-03T15:09:51.000000Z\"\n            },\n            {\n                \"id\": 7,\n                \"title\": \"Programmer\",\n                \"created_at\": \"2024-04-03T15:13:26.000000Z\",\n                \"updated_at\": \"2024-04-03T15:13:26.000000Z\"\n            },\n            {\n                \"id\": 8,\n                \"title\": \"Furniture Finisher\",\n                \"created_at\": \"2024-04-03T15:13:26.000000Z\",\n                \"updated_at\": \"2024-04-03T15:13:26.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/v1/hr/jobs?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://127.0.0.1:8000/api/v1/hr/jobs?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/v1/hr/jobs?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://127.0.0.1:8000/api/v1/hr/jobs\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 8,\n        \"total\": 8\n    }\n}"
 								}
 							]
 						},
 						{
-							"name": "List View",
+							"name": "Create View",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/api/v1/hr/jobs/list",
+									"raw": "{{url}}/api/v1/hr/jobs/create-view",
 									"host": [
 										"{{url}}"
 									],
@@ -2003,19 +1901,19 @@
 										"v1",
 										"hr",
 										"jobs",
-										"list"
+										"create-view"
 									]
 								},
-								"description": " Renders a paginated view displaying job records."
+								"description": "Renders a form for creating a new job record."
 							},
 							"response": [
 								{
-									"name": "List View",
+									"name": "Create View",
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{url}}/api/v1/hr/jobs/list",
+											"raw": "{{url}}/api/v1/hr/jobs/create-view",
 											"host": [
 												"{{url}}"
 											],
@@ -2024,7 +1922,7 @@
 												"v1",
 												"hr",
 												"jobs",
-												"list"
+												"create-view"
 											]
 										}
 									},
@@ -2038,11 +1936,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 16:41:45 GMT"
+											"value": "Wed, 03 Apr 2024 15:14:23 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 16:41:45 GMT"
+											"value": "Wed, 03 Apr 2024 15:14:23 GMT"
 										},
 										{
 											"key": "Connection",
@@ -2067,98 +1965,6 @@
 										{
 											"key": "X-RateLimit-Remaining",
 											"value": "8"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"title\": \"Founder\",\n                \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n                \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n            },\n            {\n                \"id\": 2,\n                \"title\": \"Gas Pumping Station Operator\",\n                \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n                \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n            },\n            {\n                \"id\": 3,\n                \"title\": \"Forensic Science Technician\",\n                \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n                \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n            },\n            {\n                \"id\": 4,\n                \"title\": \"Buffing and Polishing Operator\",\n                \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n                \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n            },\n            {\n                \"id\": 5,\n                \"title\": \"update title\",\n                \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n                \"updated_at\": \"2024-03-30T13:21:19.000000Z\"\n            },\n            {\n                \"id\": 6,\n                \"title\": \"Actuary\",\n                \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n                \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n            },\n            {\n                \"id\": 7,\n                \"title\": \"Programmer\",\n                \"created_at\": \"2024-03-30T13:19:55.000000Z\",\n                \"updated_at\": \"2024-03-30T13:19:55.000000Z\"\n            },\n            {\n                \"id\": 8,\n                \"title\": \"Furniture Finisher\",\n                \"created_at\": \"2024-03-30T13:19:55.000000Z\",\n                \"updated_at\": \"2024-03-30T13:19:55.000000Z\"\n            },\n            {\n                \"id\": 9,\n                \"title\": \"Softwear\",\n                \"created_at\": \"2024-03-30T13:21:09.000000Z\",\n                \"updated_at\": \"2024-03-30T13:21:09.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/v1/hr/jobs/list?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://127.0.0.1:8000/api/v1/hr/jobs/list?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/v1/hr/jobs/list?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://127.0.0.1:8000/api/v1/hr/jobs/list\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 9,\n        \"total\": 9\n    }\n}"
-								}
-							]
-						},
-						{
-							"name": "Create View",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{url}}/api/v1/hr/jobs/call-function/createview",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"hr",
-										"jobs",
-										"call-function",
-										"createview"
-									]
-								},
-								"description": "Renders a form for creating a new job record."
-							},
-							"response": [
-								{
-									"name": "Create View",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{url}}/api/v1/hr/jobs/call-function/createview",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"hr",
-												"jobs",
-												"call-function",
-												"createview"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:20:26 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:20:26 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.11"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "10"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "5"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -2180,7 +1986,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\": 1\r\n}",
+									"raw": "",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2188,7 +1994,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/api/v1/hr/jobs/call-function/showview",
+									"raw": "{{url}}/api/v1/hr/jobs/show-view/3",
 									"host": [
 										"{{url}}"
 									],
@@ -2197,8 +2003,8 @@
 										"v1",
 										"hr",
 										"jobs",
-										"call-function",
-										"showview"
+										"show-view",
+										"3"
 									]
 								},
 								"description": "Renders a view displaying detailed information about a specific job record."
@@ -2211,7 +2017,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"id\": 1\r\n}",
+											"raw": "",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -2219,7 +2025,7 @@
 											}
 										},
 										"url": {
-											"raw": "{{url}}/api/v1/hr/jobs/call-function/showview",
+											"raw": "{{url}}/api/v1/hr/jobs/show-view/3",
 											"host": [
 												"{{url}}"
 											],
@@ -2228,8 +2034,8 @@
 												"v1",
 												"hr",
 												"jobs",
-												"call-function",
-												"showview"
+												"show-view",
+												"3"
 											]
 										}
 									},
@@ -2243,237 +2049,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:20:34 GMT"
+											"value": "Wed, 03 Apr 2024 15:14:32 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:20:34 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.11"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "10"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "9"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"message\": \"Job details opened successfully.\",\n    \"job\": {\n        \"id\": 1,\n        \"title\": \"Founder\",\n        \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n        \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n    }\n}"
-								}
-							]
-						},
-						{
-							"name": "Update View",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id\": 5\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/api/v1/hr/jobs/call-function/editview",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"hr",
-										"jobs",
-										"call-function",
-										"editview"
-									]
-								},
-								"description": "Renders a form for updating an existing job record."
-							},
-							"response": [
-								{
-									"name": "Update View",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"id\": 5\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{url}}/api/v1/hr/jobs/call-function/editview",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"hr",
-												"jobs",
-												"call-function",
-												"editview"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:20:42 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:20:42 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.11"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "10"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "8"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"message\": \"Job edit form opened successfully.\",\n    \"job\": {\n        \"id\": 5,\n        \"title\": \"Industrial Engineer\",\n        \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n        \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n    }\n}"
-								}
-							]
-						},
-						{
-							"name": "Delete View",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id\": 5\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/api/v1/hr/jobs/call-function/deleteview",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"hr",
-										"jobs",
-										"call-function",
-										"deleteview"
-									]
-								},
-								"description": "Renders a confirmation form for deleting an existing job record."
-							},
-							"response": [
-								{
-									"name": "Delete View",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"id\": 5\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{url}}/api/v1/hr/jobs/call-function/deleteview",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"hr",
-												"jobs",
-												"call-function",
-												"deleteview"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:20:55 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:20:55 GMT"
+											"value": "Wed, 03 Apr 2024 15:14:32 GMT"
 										},
 										{
 											"key": "Connection",
@@ -2505,33 +2085,29 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"message\": \"Job deletion form opened successfully.\",\n    \"job\": {\n        \"id\": 5,\n        \"title\": \"Industrial Engineer\",\n        \"created_at\": \"2024-03-30T11:27:20.000000Z\",\n        \"updated_at\": \"2024-03-30T11:27:20.000000Z\"\n    }\n}"
+									"body": "{\n    \"message\": \"Job details opened successfully.\",\n    \"job\": {\n        \"id\": 3,\n        \"title\": \"Heaters\",\n        \"created_at\": \"2024-04-03T15:09:51.000000Z\",\n        \"updated_at\": \"2024-04-03T15:09:51.000000Z\"\n    }\n}"
 								}
 							]
-						}
-					],
-					"description": "This subfolder contains endpoints that render views for various job-related actions, such as displaying job lists, creating, showing, updating, and deleting job records."
-				},
-				{
-					"name": "Actions",
-					"item": [
+						},
 						{
-							"name": "Create",
+							"name": "Update View",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
-								"method": "POST",
+								"method": "GET",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "title",
-											"value": "Softwear",
-											"type": "text"
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": {
-									"raw": "{{url}}/api/v1/hr/jobs",
+									"raw": "{{url}}/api/v1/hr/jobs/edit-view/2",
 									"host": [
 										"{{url}}"
 									],
@@ -2539,29 +2115,30 @@
 										"api",
 										"v1",
 										"hr",
-										"jobs"
+										"jobs",
+										"edit-view",
+										"2"
 									]
 								},
-								"description": " Creates a new job record and stores it in the database."
+								"description": "Renders a form for updating an existing job record."
 							},
 							"response": [
 								{
-									"name": "Create",
+									"name": "Update View",
 									"originalRequest": {
-										"method": "POST",
+										"method": "GET",
 										"header": [],
 										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "title",
-													"value": "Softwear",
-													"type": "text"
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
 												}
-											]
+											}
 										},
 										"url": {
-											"raw": "{{url}}/api/v1/hr/jobs",
+											"raw": "{{url}}/api/v1/hr/jobs/edit-view/2",
 											"host": [
 												"{{url}}"
 											],
@@ -2569,7 +2146,9 @@
 												"api",
 												"v1",
 												"hr",
-												"jobs"
+												"jobs",
+												"edit-view",
+												"2"
 											]
 										}
 									},
@@ -2583,11 +2162,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:21:09 GMT"
+											"value": "Wed, 03 Apr 2024 15:14:39 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:21:09 GMT"
+											"value": "Wed, 03 Apr 2024 15:14:39 GMT"
 										},
 										{
 											"key": "Connection",
@@ -2619,21 +2198,21 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"message\": \"Job created successfully\"\n}"
+									"body": "{\n    \"message\": \"Job edit form opened successfully.\",\n    \"job\": {\n        \"id\": 2,\n        \"title\": \"Psychiatrist\",\n        \"created_at\": \"2024-04-03T15:09:51.000000Z\",\n        \"updated_at\": \"2024-04-03T15:09:51.000000Z\"\n    }\n}"
 								}
 							]
 						},
 						{
-							"name": "Update",
+							"name": "Delete View",
 							"protocolProfileBehavior": {
-								"disabledSystemHeaders": {}
+								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "PUT",
+								"method": "GET",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"title\": \"update title\"\r\n}",
+									"raw": "",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2641,7 +2220,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/api/v1/hr/jobs/5",
+									"raw": "{{url}}/api/v1/hr/jobs/delete-view/2",
 									"host": [
 										"{{url}}"
 									],
@@ -2650,20 +2229,21 @@
 										"v1",
 										"hr",
 										"jobs",
-										"5"
+										"delete-view",
+										"2"
 									]
 								},
-								"description": "Updates the details of a specific job record in the database."
+								"description": "Renders a confirmation form for deleting an existing job record."
 							},
 							"response": [
 								{
-									"name": "Update",
+									"name": "Delete View",
 									"originalRequest": {
-										"method": "PUT",
+										"method": "GET",
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"title\": \"update title\"\r\n}",
+											"raw": "",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -2671,7 +2251,7 @@
 											}
 										},
 										"url": {
-											"raw": "{{url}}/api/v1/hr/jobs/5",
+											"raw": "{{url}}/api/v1/hr/jobs/delete-view/2",
 											"host": [
 												"{{url}}"
 											],
@@ -2680,7 +2260,8 @@
 												"v1",
 												"hr",
 												"jobs",
-												"5"
+												"delete-view",
+												"2"
 											]
 										}
 									},
@@ -2694,101 +2275,11 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:21:19 GMT"
+											"value": "Wed, 03 Apr 2024 15:14:49 GMT"
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:21:19 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "close"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/8.2.11"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "10"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "5"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"message\": \"Job updated successfully\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Delete",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{url}}/api/v1/hr/jobs/6",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"hr",
-										"jobs",
-										"6"
-									]
-								},
-								"description": "Deletes a specific job record from the database."
-							},
-							"response": [
-								{
-									"name": "Delete",
-									"originalRequest": {
-										"method": "DELETE",
-										"header": [],
-										"url": {
-											"raw": "{{url}}/api/v1/hr/jobs/6",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"hr",
-												"jobs",
-												"6"
-											]
-										}
-									},
-									"status": "Bad Request",
-									"code": 400,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Host",
-											"value": "127.0.0.1:8000"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:21:26 GMT"
-										},
-										{
-											"key": "Date",
-											"value": "Sat, 30 Mar 2024 13:21:26 GMT"
+											"value": "Wed, 03 Apr 2024 15:14:49 GMT"
 										},
 										{
 											"key": "Connection",
@@ -2820,7 +2311,322 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"message\": \"Job is assigned to an employee.\"\n}"
+									"body": "{\n    \"message\": \"Job deletion form opened successfully.\",\n    \"job\": {\n        \"id\": 2,\n        \"title\": \"Psychiatrist\",\n        \"created_at\": \"2024-04-03T15:09:51.000000Z\",\n        \"updated_at\": \"2024-04-03T15:09:51.000000Z\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"description": "This subfolder contains endpoints that render views for various job-related actions, such as displaying job lists, creating, showing, updating, and deleting job records."
+				},
+				{
+					"name": "Actions",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "software",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/hr/jobs",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"hr",
+										"jobs"
+									]
+								},
+								"description": " Creates a new job record and stores it in the database."
+							},
+							"response": [
+								{
+									"name": "Create",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "title",
+													"value": "software",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/hr/jobs",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"hr",
+												"jobs"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Apr 2024 15:15:16 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Apr 2024 15:15:16 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.11"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "3"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Job created successfully.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"update title\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/hr/jobs/6",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"hr",
+										"jobs",
+										"6"
+									]
+								},
+								"description": "Updates the details of a specific job record in the database."
+							},
+							"response": [
+								{
+									"name": "Update",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\": \"update title\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/hr/jobs/6",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"hr",
+												"jobs",
+												"6"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Apr 2024 15:15:31 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Apr 2024 15:15:31 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.11"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Job updated successfully\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/hr/jobs/9",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"hr",
+										"jobs",
+										"9"
+									]
+								},
+								"description": "Deletes a specific job record from the database."
+							},
+							"response": [
+								{
+									"name": "Delete",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/hr/jobs/9",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"hr",
+												"jobs",
+												"9"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Apr 2024 15:16:15 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Apr 2024 15:16:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.11"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "4"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Job deleted successfully\"\n}"
 								}
 							]
 						}
