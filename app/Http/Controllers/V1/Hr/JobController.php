@@ -6,22 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\Hr\JobRequest;
 use App\Models\V1\Hr\Job;
 use App\Services\V1\Hr\JobService;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class JobController extends Controller
 {
-
-    public Model $model;
-    private mixed $service;
-
-    public function __construct()
-    {
-        $this->model = new Job();
-        $this->service = new JobService();
-    }
-
     /**
      * Display a listing of the resource.
      */
@@ -31,7 +20,7 @@ class JobController extends Controller
         $perPage = $request->input('perPage', 10);
 
         // Fetch paginated fonts data
-        $data = $this->model::paginate($perPage, ['*'], 'page', $page);
+        $data = Job::paginate($perPage, ['*'], 'page', $page);
 
         $content = [
             'message' => 'Jobs fetched successfully.',
@@ -64,7 +53,7 @@ class JobController extends Controller
     {
         try {
 
-            $job = $this->model->findOrFail($id);
+            $job = Job::findOrFail($id);
 
             if ($job && $job->update($request->validated())) {
                 return response()->json(['message' => 'Job updated successfully']);
@@ -124,23 +113,23 @@ class JobController extends Controller
         }
     }
 
-    public function createView(Request $request)
+    public function createView(Request $request, JobService $service)
     {
-        return $this->service->createView($request);
+        return $service->createView($request);
     }
 
-    public function editView($id)
+    public function editView($id, JobService $service)
     {
-        return $this->service->editView($id);
+        return $service->editView($id);
     }
 
-    public function showView($id)
+    public function showView($id, JobService $service)
     {
-        return $this->service->showView($id);
+        return $service->showView($id);
     }
 
-    public function deleteView($id)
+    public function deleteView($id, JobService $service)
     {
-        return $this->service->deleteView($id);
+        return $service->deleteView($id);
     }
 }

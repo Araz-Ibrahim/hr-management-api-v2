@@ -7,7 +7,6 @@ use App\Http\Requests\V1\Hr\EmployeeRequest;
 use App\Mail\SalaryChangedMail;
 use App\Models\V1\Hr\Employee;
 use App\Services\V1\Hr\EmployeeService;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
@@ -15,16 +14,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class EmployeeController extends Controller
 {
-
-    public Model $model;
-    private mixed $service;
-
-    public function __construct()
-    {
-        $this->model = new Employee();
-        $this->service = new EmployeeService();
-    }
-
     /**
      * Display a listing of the resource.
      */
@@ -34,7 +23,7 @@ class EmployeeController extends Controller
         $perPage = $request->input('perPage', 10);
 
         // Fetch paginated fonts data
-        $data = $this->model::paginate($perPage, ['*'], 'page', $page);
+        $data = Employee::paginate($perPage, ['*'], 'page', $page);
 
         $content = [
             'message' => 'Employees fetched successfully.',
@@ -51,7 +40,7 @@ class EmployeeController extends Controller
     {
         try {
             // Check if the job_id is 1 and there is already a founder
-            if ($request->job_id == 1 && $this->model->where('job_id', 1)->count() > 0) {
+            if ($request->job_id == 1 && Employee::where('job_id', 1)->count() > 0) {
                 return response()->json(['message' => 'Already have a founder.'], 400);
             }
 
@@ -72,12 +61,12 @@ class EmployeeController extends Controller
     {
         try {
             // Check if the job_id is 1 and there is already a founder
-            if ($request->job_id == 1 && $this->model->where('job_id', 1)->where('id', '!=', $id)->count() > 0) {
+            if ($request->job_id == 1 && Employee::where('job_id', 1)->where('id', '!=', $id)->count() > 0) {
                 return response()->json(['message' => 'Already have a founder.'], 400);
             }
 
             // Find the employee by ID
-            $employee = $this->model->findOrFail($id);
+            $employee = Employee::findOrFail($id);
 
             if ($employee && $employee->update($request->validated())) {
 
@@ -132,48 +121,48 @@ class EmployeeController extends Controller
         }
     }
 
-    public function createView(Request $request)
+    public function createView(Request $request, EmployeeService $service)
     {
-        return $this->service->createView($request);
+        return $service->createView($request);
     }
 
-    public function editView($id)
+    public function editView($id, EmployeeService $service)
     {
-        return $this->service->editView($id);
+        return $service->editView($id);
     }
 
-    public function showView($id)
+    public function showView($id, EmployeeService $service)
     {
-        return $this->service->showView($id);
+        return $service->showView($id);
     }
 
-    public function deleteView($id)
+    public function deleteView($id, EmployeeService $service)
     {
-        return $this->service->deleteView($id);
+        return $service->deleteView($id);
     }
 
-    public function findManagers(Request $request)
+    public function findManagers(Request $request, EmployeeService $service)
     {
-        return $this->service->findManagers($request);
+        return $service->findManagers($request);
     }
 
-    public function findManagersWithSalaries(Request $request)
+    public function findManagersWithSalaries(Request $request, EmployeeService $service)
     {
-        return $this->service->findManagersWithSalaries($request);
+        return $service->findManagersWithSalaries($request);
     }
 
-    public function searchEmployees(Request $request)
+    public function searchEmployees(Request $request, EmployeeService $service)
     {
-        return $this->service->searchEmployees($request);
+        return $service->searchEmployees($request);
     }
 
-    public function exportEmployeesCsv(Request $request)
+    public function exportEmployeesCsv(Request $request, EmployeeService $service)
     {
-        return $this->service->exportEmployeesCsv($request);
+        return $service->exportEmployeesCsv($request);
     }
 
-    public function importEmployeesCsv(Request $request)
+    public function importEmployeesCsv(Request $request, EmployeeService $service)
     {
-        return $this->service->importEmployeesCsv($request);
+        return $service->importEmployeesCsv($request);
     }
 }
