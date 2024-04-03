@@ -4,6 +4,7 @@ namespace App\Http\Requests\V1\Hr;
 
 use App\Base\BaseFormRequest;
 use App\Models\V1\Hr\Employee;
+use Illuminate\Http\Request;
 
 class EmployeeRequest extends BaseFormRequest
 {
@@ -34,9 +35,11 @@ class EmployeeRequest extends BaseFormRequest
 
     public function update()
     {
+        $id = $this->route('employee'); // Retrieve the id from the route parameters
+
         return [
             'name' => 'required|string',
-            'email' => 'required|email|unique:employees,email,' . $this->id, // 'unique' rule is added
+            'email' => 'required|email|unique:employees,email,' . $id, // 'unique' rule is added
             'manager_id' => 'nullable|integer|exists:employees,id',
             'job_id' => 'required|integer|exists:employee_jobs,id',
             'salary' => 'required|numeric',

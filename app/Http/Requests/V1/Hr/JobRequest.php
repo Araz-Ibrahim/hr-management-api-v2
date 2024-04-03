@@ -21,8 +21,10 @@ class JobRequest extends BaseFormRequest
 
     public function update()
     {
+        $id = $this->route('job'); // Retrieve the id from the route parameters
+
         return [
-            'title' => 'required|string|max:255|unique:employee_jobs,title,' . $this->id,
+            'title' => 'required|string|max:255|unique:employee_jobs,title,' . $id,
         ];
     }
 

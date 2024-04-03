@@ -67,11 +67,12 @@ class EmployeeController extends Controller
 
             // Find the employee by ID
             $employee = Employee::findOrFail($id);
+            $oldSalary = $employee->salary;
 
             if ($employee && $employee->update($request->validated())) {
 
                 // if salary is updated, notify the employee by email
-                if ($employee->salary != $request->salary) {
+                if ($employee->salary != $oldSalary) {
                     // Send email notification to the employee
                     Mail::to($request->email)->send(new SalaryChangedMail($request->salary));
                 }
