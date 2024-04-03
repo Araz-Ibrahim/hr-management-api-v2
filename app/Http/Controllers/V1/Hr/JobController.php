@@ -37,7 +37,7 @@ class JobController extends Controller
     {
         try {
             if (Job::create($request->validated())) {
-                return response()->json(['message' => 'Job created successfully']);
+                return response()->json(['message' => 'Job created successfully.']);
             }
 
             return response()->json(['message' => 'Job creation failed.'], 500);
