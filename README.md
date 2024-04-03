@@ -23,7 +23,7 @@ Make sure you have the following installed on your machine:
 
 #### 1. Clone the repository
 ```bash
-git clone https://github.com/Araz-Ibrahim/hr-management-api.git
+git clone https://github.com/Araz-Ibrahim/hr-management-api-v2.git
 ```
 #### 2. Navigate to the project directory
 ```bash
