@@ -1,30 +1,18 @@
 <?php
 
-namespace App\Repositories\V1\Hr;
+namespace App\Services\v1\hr\employee;
 
-use App\Base\BaseRepository;
-use App\Base\Interfaces\BaseViewInterface;
 use App\Models\V1\Hr\Employee;
 use App\Models\V1\Hr\Job;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
-class EmployeeRepository extends BaseRepository implements BaseViewInterface
+class EmployeeService
 {
-    public function __construct(Model $model)
-    {
-        parent::__construct($model); // call the parent constructor
-    }
-
-    public function indexView(Request $request): JsonResponse
-    {
-        // Implement indexView() method.
-    }
-
     public function createView(Request $request): JsonResponse
     {
-        $employees = $this->model->all()->select('id', 'name');
+        $employees = Employee::all()->select('id', 'name');
 
         return response()->json([
             'message' => 'Employee creation form opened successfully.',
@@ -32,16 +20,25 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
         ]);
     }
 
-    public function editView(Request $request): JsonResponse
+    public function editView($id): JsonResponse
     {
-        $currentEmployee = $this->model->leftJoin('employees as manager', 'employees.manager_id', '=', 'manager.id')
+        // validate the $id
+        $validator = Validator::make(['id' => $id], [
+            'id' => 'required|exists:employees,id',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['message' => 'Invalid employee ID.'], 400);
+        }
+
+        $currentEmployee = Employee::leftJoin('employees as manager', 'employees.manager_id', '=', 'manager.id')
             ->leftJoin('employee_jobs as job', 'employees.job_id', '=', 'job.id')
-            ->where('employees.id', $request->id)
+            ->where('employees.id', $id)
             ->select('employees.id', 'employees.name', 'employees.email', 'employees.manager_id', 'employees.salary', 'manager.id as manager_id', 'manager.name as manager_name',
                 'job.id as job_id', 'job.title as job_title')
             ->first();
 
-        $employees = $this->model->where('id', '!=', $request->id)
+        $employees = Employee::where('id', '!=', $id)
             ->select('id', 'name')->get();
 
         return response()->json([
@@ -51,16 +48,20 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
         ]);
     }
 
-    public function filterView(Request $request): JsonResponse
+    public function showView($id): JsonResponse
     {
-        // Implement filterView() method.
-    }
+        // validate the $id
+        $validator = Validator::make(['id' => $id], [
+            'id' => 'required|exists:employees,id',
+        ]);
 
-    public function showView(Request $request): JsonResponse
-    {
-        $employee = $this->model->leftJoin('employees as manager', 'employees.manager_id', '=', 'manager.id')
+        if ($validator->fails()) {
+            return response()->json(['message' => 'Invalid employee ID.'], 400);
+        }
+
+        $employee = Employee::leftJoin('employees as manager', 'employees.manager_id', '=', 'manager.id')
             ->leftJoin('employee_jobs as job', 'employees.job_id', '=', 'job.id')
-            ->where('employees.id', $request->id)
+            ->where('employees.id', $id)
             ->select('employees.id', 'employees.name', 'employees.email','employees.manager_id', 'employees.salary', 'manager.id as manager_id', 'manager.name as manager_name',
                 'job.id as job_id', 'job.title as job_title')
             ->first();
@@ -71,9 +72,18 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
         ]);
     }
 
-    public function deleteView(Request $request): JsonResponse
+    public function deleteView($id): JsonResponse
     {
-        $employee = $this->model->where('id', $request->id)->first();
+        // validate the $id
+        $validator = Validator::make(['id' => $id], [
+            'id' => 'required|exists:employees,id',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['message' => 'Invalid employee ID.'], 400);
+        }
+
+        $employee = Employee::where('id', $id)->first();
 
         return response()->json([
             'message' => 'Employee deleted action opened successfully.',
@@ -89,7 +99,7 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
         ]);
 
         // Fetch all managers up to the founder
-        $employee = $this->model->where('id', $request->id)
+        $employee = Employee::where('id', $request->id)
             ->with('manager')->first();
 
         $currentEmployeeName = $employee->name;
@@ -122,7 +132,7 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
 
 
         // Fetch the current employee and its managers up to the founder
-        $employee = $this->model->where('id', $request->id)
+        $employee = Employee::where('id', $request->id)
             ->with('manager')->first();
 
         $currentEmployeeName = $employee->name;
@@ -154,11 +164,10 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
 
         // If no search term provided, return all employees
         if (!$searchTerm) {
-            $employees = $this->model->all();
+            $employees = Employee::all();
         } else {
             // Search for employees by name or salary containing the provided search term
-            $employees = $this->model
-                ->where('employees.name', 'like', '%' . $searchTerm . '%')
+            $employees = Employee::where('employees.name', 'like', '%' . $searchTerm . '%')
                 ->orWhere('employees.salary', 'like', '%' . $searchTerm . '%')
                 ->leftJoin('employees as manager', 'employees.manager_id', '=', 'manager.id')
                 ->leftJoin('employee_jobs as job', 'employees.job_id', '=', 'job.id')
@@ -172,10 +181,10 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
         ]);
     }
 
-    public function exportEmployeesCsv()
+    public function exportEmployeesCsv(Request $request)
     {
         // Fetch all employees
-        $employees = $this->model->all();
+        $employees = Employee::all();
 
         // Set headers for CSV file download
         $headers = [
@@ -234,7 +243,7 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
             $salary = (int) trim($row[5], '"'); // Parse salary as integer and remove double quotes
 
             // Lookup manager_id based on manager's name
-            $manager = $this->model::where('name', $managerName)->first();
+            $manager = Employee::where('name', $managerName)->first();
             $job = Job::where('title', $jobTitle)->first() ?? Job::create(['title' => $jobTitle]);
 
             // Create or update employee record
@@ -251,5 +260,4 @@ class EmployeeRepository extends BaseRepository implements BaseViewInterface
             'message' => 'Employees seeded successfully from CSV file.',
         ]);
     }
-
 }

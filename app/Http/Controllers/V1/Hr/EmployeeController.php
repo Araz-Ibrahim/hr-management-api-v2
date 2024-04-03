@@ -2,26 +2,45 @@
 
 namespace App\Http\Controllers\V1\Hr;
 
-use App\Base\BaseController;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\Hr\EmployeeRequest;
-use App\Http\Resources\V1\Hr\EmployeeResource;
 use App\Mail\SalaryChangedMail;
 use App\Models\V1\Hr\Employee;
-use App\Repositories\V1\Hr\EmployeeRepository;
+use App\Services\v1\hr\employee\EmployeeService;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Symfony\Component\HttpFoundation\Response;
 
-class EmployeeController extends BaseController
+class EmployeeController extends Controller
 {
+
+    public Model $model;
+    private mixed $service;
+
     public function __construct()
     {
-      parent::__construct();
+        $this->model = new Employee();
+        $this->service = new EmployeeService();
+    }
 
-      $this->modelClass = new Employee();
-      $this->modelResource = EmployeeResource::class;
-      $this->formRequest = new EmployeeRequest();
-      $this->repository = new EmployeeRepository($this->modelClass);
-      $this->allowedFunctions = ['findManagers', 'findManagersWithSalaries', 'searchEmployees', 'exportEmployeesCsv', 'importEmployeesCsv'];
+    /**
+     * Display a listing of the resource.
+     */
+    public function index(Request $request) {
+        // Set the default values for page and perPage
+        $page = $request->input('page', 1);
+        $perPage = $request->input('perPage', 10);
+
+        // Fetch paginated fonts data
+        $data = $this->model::paginate($perPage, ['*'], 'page', $page);
+
+        $content = [
+            'message' => 'Employees fetched successfully.',
+            'list' => $data,
+        ];
+
+        return response($content, Response::HTTP_OK);
     }
 
     /**
@@ -31,17 +50,17 @@ class EmployeeController extends BaseController
     {
         try {
             // Check if the job_id is 1 and there is already a founder
-            if ($request->job_id == 1 && $this->modelClass->where('job_id', 1)->count() > 0) {
+            if ($request->job_id == 1 && $this->model->where('job_id', 1)->count() > 0) {
                 return response()->json(['message' => 'Already have a founder.'], 400);
             }
 
-            if ($this->repository->create($request->validationData())) {
+            if (Employee::create($request->validated())) {
                 return response()->json(['message' => 'Employee created successfully']);
             }
 
-            return response()->json(['message' => 'Employee creation failed.'], 500);
+            return response()->json(['message' => 'Employee creation failed.'], 400);
         } catch (\Exception $e) {
-            return response()->json(['message' => 'Employee creation failed.'], 500);
+            return response()->json(['message' => 'Employee creation failed.'], 400);
         }
     }
 
@@ -52,12 +71,14 @@ class EmployeeController extends BaseController
     {
         try {
             // Check if the job_id is 1 and there is already a founder
-            if ($request->job_id == 1 && $this->modelClass->where('job_id', 1)->where('id', '!=', $id)->count() > 0) {
+            if ($request->job_id == 1 && $this->model->where('job_id', 1)->where('id', '!=', $id)->count() > 0) {
                 return response()->json(['message' => 'Already have a founder.'], 400);
             }
 
-            $employee = $this->repository->findById($id);
-            if ($employee && $this->repository->update($id, $request->validationData())) {
+            // Find the employee by ID
+            $employee = $this->model->findOrFail($id);
+
+            if ($employee && $employee->update($request->validated())) {
 
                 // if salary is updated, notify the employee by email
                 if ($employee->salary != $request->salary) {
@@ -68,9 +89,9 @@ class EmployeeController extends BaseController
                 return response()->json(['message' => 'Employee updated successfully']);
             }
 
-            return response()->json(['message' => 'Employee update failed.'], 500);
+            return response()->json(['message' => 'Employee not found'], 404);
         } catch (\Exception $e) {
-            return response()->json(['message' => $e->getMessage()], 500);
+            return response()->json(['message' => 'Employee update failed.'], 400);
         }
     }
 
@@ -88,38 +109,61 @@ class EmployeeController extends BaseController
     public function destroy(EmployeeRequest $employee)
     {
         try {
-            if ($this->repository->deleteById($employee->id)) {
+            // Find the employee by ID
+            $employee = Employee::findOrFail($employee->id);
+
+            if ($employee->delete()) {
                 return response()->json(['message' => 'Employee deleted successfully']);
             }
 
-            return response()->json(['message' => 'Employee deletion failed.'], 500);
+            return response()->json(['message' => 'Employee not found'], 404);
         } catch (\Exception $e) {
-            return response()->json(['message' => $e->getMessage()], 500);
+            return response()->json(['message' =>'Employee deletion failed'], 400);
         }
+    }
+
+    public function createView(Request $request)
+    {
+        return $this->service->createView($request);
+    }
+
+    public function editView($id)
+    {
+        return $this->service->editView($id);
+    }
+
+    public function showView($id)
+    {
+        return $this->service->showView($id);
+    }
+
+    public function deleteView($id)
+    {
+        return $this->service->deleteView($id);
     }
 
     public function findManagers(Request $request)
     {
-        return $this->repository->findManagers($request);
+        return $this->service->findManagers($request);
     }
 
     public function findManagersWithSalaries(Request $request)
     {
-        return $this->repository->findManagersWithSalaries($request);
+        return $this->service->findManagersWithSalaries($request);
     }
 
     public function searchEmployees(Request $request)
     {
-        return $this->repository->searchEmployees($request);
+        return $this->service->searchEmployees($request);
     }
 
     public function exportEmployeesCsv(Request $request)
     {
-        return $this->repository->exportEmployeesCsv($request);
+        return $this->service->exportEmployeesCsv($request);
     }
 
     public function importEmployeesCsv(Request $request)
     {
-        return $this->repository->importEmployeesCsv($request);
+        return $this->service->importEmployeesCsv($request);
     }
 }

@@ -16,18 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-$routes = [
-    'v1' => [
-        ['group' => 'hr', 'model' => 'employees', 'ctrl' => EmployeeController::class],
-        ['group' => 'hr', 'model' => 'jobs', 'ctrl' => JobController::class],
-        // Add more routes for version 1 here if needed
-    ],
-    'v2' => [
-        // Add routes for version 2 here
-    ],
-    // Add more versions as needed
-];
-
 /** --------- Register and Login ----------- */
 Route::controller(UserAuthController::class)->group(function () {
     Route::post('register', 'register');
@@ -35,14 +23,27 @@ Route::controller(UserAuthController::class)->group(function () {
 });
 
 /** ----------- Authenticated Routes ------------ */
-Route::middleware('auth:sanctum')->group(function () use ($routes) {
-    foreach ($routes as $version => $versionRoutes) {
-        foreach ($versionRoutes as $route) {
-            Route::group(['prefix' => $version . '/' . $route['group']], function () use ($route) {
-                Route::resourceAndList($route['model'], $route['ctrl']);
-            });
-        }
-    }
+Route::middleware('auth:sanctum')->group(function () {
+
+    Route::group(['prefix' => 'v1'], function () {
+        Route::group(['prefix' => 'hr'], function () {
+
+            // Employees
+            Route::get('employees/create-view', [EmployeeController::class, 'createView']);
+            Route::get('employees/edit-view/{id}', [EmployeeController::class, 'editView']);
+            Route::get('employees/show-view/{id}', [EmployeeController::class, 'showView']);
+            Route::get('employees/delete-view/{id}', [EmployeeController::class, 'deleteView']);
+            Route::get('employees/find-managers', [EmployeeController::class, 'findManagers']);
+            Route::get('employees/find-managers-with-salaries', [EmployeeController::class, 'findManagersWithSalaries']);
+            Route::get('employees/search', [EmployeeController::class, 'searchEmployees']);
+            Route::get('employees/export-csv', [EmployeeController::class, 'exportEmployeesCsv']);
+            Route::post('employees/import-csv', [EmployeeController::class, 'importEmployeesCsv']);
+            Route::resource('employees', EmployeeController::class);
+
+            // Jobs
+            Route::resource('jobs', JobController::class);
+        });
+    });
 
     // Users
     Route::post('/logout', [UserAuthController::class, 'logout']);
